@@ -1,4 +1,5 @@
 class Cell < ApplicationRecord
+	# Relationships
 	has_many :tasks
 	has_many :comments
 	has_many :cell_quests
