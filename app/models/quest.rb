@@ -4,4 +4,6 @@ class Quest < ApplicationRecord
 	has_many :cells, through: :cell_quests 
 
 	# Validations
+	validates :name, presence: true
+	
 end

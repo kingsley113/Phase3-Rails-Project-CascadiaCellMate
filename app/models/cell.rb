@@ -12,5 +12,6 @@ class Cell < ApplicationRecord
 	has_many :child_cells, :class_name => :cell, :foreign_key => "exterior_cell_id"
 
 	# Validations
-	
+	validates :name, :ck_coordinate_x, :ck_coordinate_y, :region_id, presence: true
+
 end

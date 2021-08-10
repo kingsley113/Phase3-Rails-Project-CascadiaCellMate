@@ -3,4 +3,5 @@ class Task < ApplicationRecord
 	belongs_to :cell
 
 	# Validations
+	validates :name, :cell_id, presence: true 
 end

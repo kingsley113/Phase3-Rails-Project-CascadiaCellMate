@@ -3,4 +3,5 @@ class Region < ApplicationRecord
 	has_many :cells
 
 	# Validations
+	validates :name, presence: true
 end
