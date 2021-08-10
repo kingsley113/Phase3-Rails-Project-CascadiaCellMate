@@ -1,0 +1,2 @@
+class CellQuest < ApplicationRecord
+end
