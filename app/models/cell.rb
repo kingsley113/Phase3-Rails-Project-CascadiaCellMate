@@ -11,4 +11,6 @@ class Cell < ApplicationRecord
 	belongs_to parent:, :class_name => :cell, :foreign_key => "exterior_cell_id"
 	has_many :child_cells, :class_name => :cell, :foreign_key => "exterior_cell_id"
 
+	# Validations
+	
 end

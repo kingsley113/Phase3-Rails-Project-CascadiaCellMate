@@ -6,4 +6,6 @@ class User < ApplicationRecord
 	# Enable Bcrypt password
 	has_secure_password
 
+	# Validations
+
 end
