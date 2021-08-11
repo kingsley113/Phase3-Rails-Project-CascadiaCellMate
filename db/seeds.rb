@@ -88,11 +88,11 @@ Cell.create(
 
 # Tasks
 Cell.all.each do |cell| 
-	Task.create(name: "Block out buildings", cell_id = cell.id)
-	Task.create(name: "Create Navmesh", cell_id = cell.id)
-	Task.create(name: "Paint Textures", cell_id = cell.id)
-	Task.create(name: "Add Clutter", cell_id = cell.id)
-	Task.create(name: "Playtest and Debug", cell_id = cell.id)
+	Task.create(name: "Block out buildings", cell_id: cell.id)
+	Task.create(name: "Create Navmesh", cell_id: cell.id)
+	Task.create(name: "Paint Textures", cell_id: cell.id)
+	Task.create(name: "Add Clutter", cell_id: cell.id)
+	Task.create(name: "Playtest and Debug", cell_id: cell.id)
 end
 
 # Quests
