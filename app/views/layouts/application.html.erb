@@ -11,7 +11,16 @@
   </head>
 
   <body>
-	this is from the application layout :) <hr>
+	this is from the application layout :) we will make this pretty later...
+	<%=link_to "Cell List", cells_path %> | 
+	<%=link_to "Region List", regions_path %> |
+	<% if !@user.blank? %>
+		<%=link_to "My Cells", user_cells_path(@user) %> |
+	<% else %>
+		<%=link_to "Sign In", login_path %> |
+	<% end %>
+	<%=link_to "Quest List", quests_path %>
+	<hr>
     <%= yield %>
   </body>
 </html>
