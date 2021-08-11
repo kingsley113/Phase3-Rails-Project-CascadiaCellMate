@@ -1,1 +1,7 @@
-this is the cells index page :)
+this is the cells index page :)<br>
+
+<ul>
+	<% @cells.each do |cell| %>
+		<li><%=link_to cell.name, cell_path(cell) %></li>
+	<% end %>
+</ul>
