@@ -1,17 +1,18 @@
 require 'rails_helper'
 
 describe Cell do
-	let(:user) {User.create(username: "testUser", password:"password",)}
+	let(:user) {User.create(username: "testUser", password:"password")}
+	let(:region) {Region.create(name: "Downtown")}
 
 	let(:attributes) do
 		{
 			name: "DowntownSeattle01",
-			description: "This is one of the main downtown cells wiht the Seattle waterfront",
+			description: "This is one of the main downtown cells for the Seattle waterfront",
 			priority: 4,
 			ck_coordinate_x: -10,
 			ck_coordinate_y: 13,
 			user_id: user.id,
-			region_id: 1,
+			region_id: region.id,
 			percent_complete: 35,
 			interior: false,
 			color: "ffffff"

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Comment do
+describe Task do
 	let(:user) {User.create(username: "testUser", password:"password",)}
 	let(:region) {Region.create(name: "Downtown")}
 	
@@ -23,34 +23,31 @@ describe Comment do
 
 	let(:attributes) do
 		{
-			content: "This is a really important cell to finish, we should team up and work on it asap!",
-			user_id: user.id,
-			cell_id: cell.id
+			name: "Rough out buildings",
+			description: "Layout teh area and figure out how many buildings to place",
+			cell_id: cell.id,
+			complete: false
 		}
 	end
 	
 
 	it "creates a valid record" do
-		expect(Comment.new(attributes)).to be_valid
+		expect(Task.new(attributes)).to be_valid
 	end
 
-	let(:missing_user) { attributes.except(:user_id) }
+	let(:missing_name) { attributes.except(:name) }
 	let(:missing_cell) { attributes.except(:cell_id) }
 
-	it "is invalid without a user id" do
-		expect(Comment.new(missing_user)).not_to be_valid
+	it "is invalid without a name" do
+		expect(Task.new(missing_name)).not_to be_valid
 	end
 
 	it "is invalid without an cell id" do
-		expect(Comment.new(missing_cell)).not_to be_valid
+		expect(Task.new(missing_cell)).not_to be_valid
 	end
 
-	it "has user assigned to comment" do
-		expect(Comment.create(attributes).user).to eq(user)
-	end
-
-	it "has cell assigned to comment" do
-		expect(Comment.create(attributes).cell).to eq(cell)
+	it "has cell assigned to task" do
+		expect(Task.create(attributes).cell).to eq(cell)
 	end
 
 end
