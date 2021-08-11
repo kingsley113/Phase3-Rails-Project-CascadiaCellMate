@@ -7,12 +7,95 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Regions
-Region.create(name: "North Seattle")
-Region.create(name: "Downtown Seattle")
-Region.create(name: "Ashlands")
+ns = Region.create(name: "North Seattle")
+dt = Region.create(name: "Downtown Seattle")
+ash = Region.create(name: "Ashlands")
 Region.create(name: "Issaquah Alps")
-Region.create(name: "Eastside")
+east = Region.create(name: "Eastside")
 
 # Users
+cam = User.create(username: "kingsley113", password: "12345", display_name: "Cameron")
+jimmy = User.create(username: "jimmyd413", password: "12345", display_name: "Jimmy Diresta")
+bob = User.create(username: "bclagmeister12", password: "12345")
+david = User.create(username: "DPiccutio", password: "12345", display_name: "D Man 56")
 
-User.create(username: "kingsley113", password: "12345", display_name: "Cameron")
+# Cells
+Cell.create(
+	name: "DowntownWaterfront", 
+	description: "Waterfront area of Seattle", 
+	ck_coordinate_x: 23, 
+	ck_coordinate_y: 13, 
+	user_id: cam.id, 
+	region_id: dt.id, 
+	percent_complete: 10, 
+	interior: false
+)
+
+Cell.create(
+	name: "SpaceNeedle", 
+	description: "The Space Needle....", 
+	ck_coordinate_x: 25, 
+	ck_coordinate_y: 11, 
+	user_id: cam.id, 
+	region_id: ns.id, 
+	percent_complete: 25, 
+	interior: false
+)
+
+Cell.create(
+	name: "RainierUniversity", 
+	description: "The UW area of Seattle", 
+	ck_coordinate_x: 23, 
+	ck_coordinate_y: 10, 
+	user_id: jimmy.id, 
+	region_id: ns.id, 
+	percent_complete: 10, 
+	interior: false
+)
+
+Cell.create(
+	name: "Buckley", 
+	description: "Ruin town of buckley at south end of map", 
+	ck_coordinate_x: 67, 
+	ck_coordinate_y: 68, 
+	user_id: bob.id, 
+	region_id: ash.id, 
+	percent_complete: 50, 
+	interior: false
+)
+
+Cell.create(
+	name: "Covington", 
+	description: "Town of covington", 
+	ck_coordinate_x: 67, 
+	ck_coordinate_y: 69, 
+	user_id: david.id, 
+	region_id: ash.id, 
+	percent_complete: 10, 
+	interior: false
+)
+
+Cell.create(
+	name: "Bellevue", 
+	description: "Ground zero of the war, crater of bellevue", 
+	ck_coordinate_x: 54, 
+	ck_coordinate_y: 26, 
+	user_id: bob.id, 
+	region_id: east.id, 
+	percent_complete: 65, 
+	interior: false
+)
+
+# Tasks
+Cell.all.each do |cell| 
+	Task.create(name: "Block out buildings", cell_id = cell.id)
+	Task.create(name: "Create Navmesh", cell_id = cell.id)
+	Task.create(name: "Paint Textures", cell_id = cell.id)
+	Task.create(name: "Add Clutter", cell_id = cell.id)
+	Task.create(name: "Playtest and Debug", cell_id = cell.id)
+end
+
+# Quests
+	# TBD
+# Comments
+	# TBD
