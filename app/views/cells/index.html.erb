@@ -1,5 +1,11 @@
 this is the cells index page :)<br>
 
+<%=link_to "Create New Cell", new_cell_path %><br>
+
+<% if @user %>
+	<h2><%= @user.display_name %> Cells:</h2>
+<% end %>
+
 <ul>
 	<% @cells.each do |cell| %>
 		<li><%=link_to cell.name, cell_path(cell) %></li>
