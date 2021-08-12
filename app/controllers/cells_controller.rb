@@ -10,6 +10,7 @@ class CellsController < ApplicationController
 	end
 
 	def new
+		@cell = Cell.new
 	end
 
 	def show

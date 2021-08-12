@@ -1,0 +1,11 @@
+<%=form_for cell do |f|%>
+	Name: <%=f.text_field :name %><br>
+	Description: <%=f.text_area :description %><br>
+	Priority (1-5): <%=f.number_field :priority %><br>
+	Coordinate X: <%=f.number_field :ck_coordinate_x %><br>
+	Coordinate Y: <%=f.number_field :ck_coordinate_y %><br>
+	Assign User: <%=f.collection_select :user_id, User.all, :id, :display_name, include_blank: true %><br>
+	Region: <%=f.collection_select :region_id, Region.all, :id, :name %><br>
+	% Complete: <%=f.number_field :percent_complete %><br>
+	<%=f.submit button_text %> <%=link_to "Cancel", cells_path %>
+<% end %>
