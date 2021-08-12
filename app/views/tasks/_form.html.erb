@@ -1,0 +1,9 @@
+<%= form_for task do |f| %>
+	Name: <%=f.text_field :name %><br>
+	Description: <%=f.text_area :description %><br>
+	Complete?: <%=f.check_box :complete %><br>
+	
+	<%=f.hidden_field :cell_id %>
+
+	<%=f.submit button_text %>
+<% end %>

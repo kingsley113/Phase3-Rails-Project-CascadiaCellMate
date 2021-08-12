@@ -1,0 +1,17 @@
+<h2><%= cell.name %></h2>
+<b>Description:</b> <%= cell.description %><br>
+<b>Priority:</b> <%= cell.priority %><br>
+<b>Coordinates: X:</b> <%= cell.ck_coordinate_x %> <b>Y:</b><%= cell.ck_coordinate_y %><br>
+<b>User:</b> <%= cell.user.display_name %><br>
+<b>Region:</b> <%= cell.region.name %><br>
+<b>% Complete:</b> <%= cell.percent_complete %><br>
+<b>Color:</b> <%= cell.color %><br>
+TODO: make this graphically easy to read,
+
+<br>
+<h3>Outstanding Tasks:</h3>
+<ul>
+	<% cell.tasks.each do |task| %>
+		<li><%= task.name %></li>
+	<% end %>
+</ul>
