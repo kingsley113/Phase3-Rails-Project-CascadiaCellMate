@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 
 	def create
 		@task = Task.new(task_params)
-
+		# binding.pry
 		if @task.save!
 			redirect_to cell_path(@task.cell)
 		else
@@ -27,6 +27,11 @@ class TasksController < ApplicationController
 	end
 
 	def update 
+		# binding.pry
+		@task = Task.find(params[:id])
+		@task.update(task_params)
+
+		redirect_to cell_path(@task.cell)
 	end
 
 	def destroy

@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.strikethrough {
+	text-decoration: line-through;
+}
+
+.inline {
+	/* white-space: nowrap; */
+	display: inline-block;
+}

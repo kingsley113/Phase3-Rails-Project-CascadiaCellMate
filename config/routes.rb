@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 	post '/logout' => 'sessions#destroy'
 	get '/signup' => 'users#new'
 
-	post '/cells/:id/tasks/:task_id' => 'tasks#create'
+	# post '/cells/:id/tasks/:task_id' => 'tasks#create'
+	post '/tasks/complete' => 'tasks#complete'
 
 end

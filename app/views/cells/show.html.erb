@@ -12,9 +12,28 @@ TODO: make this graphically easy to read,
 <h3>Outstanding Tasks:</h3>
 <ul>
 	<% @cell.tasks.each do |task| %>
-		<li><%= task.name %></li>
+		<% if task.complete %>
+			<li class="strikethrough">
+		<% else %>
+			<li >
+		<% end %>
+		<%= form_tag task_path(task), method: :patch, class: "inline" do %>
+			<%= hidden_field_tag :'task[complete]', true %>
+			<%= submit_tag 'Complete' %>
+		<% end %>
+		<%= task.name %> 
+
+			
+		</li>
 	<% end %>
 </ul>
-<%# br %>
+<br>
 
-<%=link_to "Add Task", new_cell_task_path(@cell) %>
+
+Add New Task:
+<%= form_tag tasks_path do %>
+	Name: <%= text_field_tag :'task[name]' %><br>
+	Description: <%= text_field_tag :'task[description]'%><br>
+	<%=hidden_field_tag :'task[cell_id]', @cell.id %>
+	<%= submit_tag 'Add task'%>
+<% end %>
