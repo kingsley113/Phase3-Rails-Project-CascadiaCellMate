@@ -3,7 +3,7 @@ class CreateCells < ActiveRecord::Migration[6.1]
     create_table :cells do |t|
       t.string :name
 			t.text :description
-			t.integer :priority
+			t.text :priority
       t.integer :ck_coordinate_x
       t.integer :ck_coordinate_y
       t.integer :coordinate_x

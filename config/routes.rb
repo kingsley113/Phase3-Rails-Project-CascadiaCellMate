@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 		resources :cells, only: [:show, :index] 
 	end
 
-	resources :cells, only: [:show, :index] do
-		resources :tasks, only: [:show, :edit, :index, :new]
-	end
+	# resources :cells, only: [:show, :index] do
+	# 	resources :tasks, only: [:show, :edit, :index, :new]
+	# end
 
 	resources :cells, :users, :regions, :tasks, :quests 
 

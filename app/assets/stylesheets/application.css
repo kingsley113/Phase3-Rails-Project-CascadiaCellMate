@@ -35,6 +35,7 @@
 	h1 {
 		font-family: "Overseer Italic";
 		letter-spacing: .06em;
+		font-weight: normal;
 	}
 
 	.padded-body {
@@ -99,6 +100,6 @@ a {
 
 .fallout-font {
 	font-family: "Overseer Italic";
-	font-size: 18pt;
+	/* font-size: 18pt; */
 	letter-spacing: .06em;
 }

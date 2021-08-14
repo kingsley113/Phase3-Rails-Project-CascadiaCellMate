@@ -5,7 +5,7 @@ class Cell < ApplicationRecord
 	has_many :cell_quests
 	has_many :quests, through: :cell_quests
 
-	belongs_to :user
+	belongs_to :user, optional: true
 	belongs_to :region
 
 	# This is used to link an interior cell to an exterior cell Id, and also give exterior cells list of interiors
@@ -19,6 +19,7 @@ class Cell < ApplicationRecord
 	# callbacks
 	before_create :set_adjusted_coordinates
 
+	attr_accessor :create_default_tasks
 
 	private
 

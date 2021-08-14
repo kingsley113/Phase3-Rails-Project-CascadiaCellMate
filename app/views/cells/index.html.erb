@@ -1,6 +1,4 @@
-this is the cells index page :)<br>
-
-<%=link_to "Create New Cell", new_cell_path %><br>
+<h1 class="fallout-font"><%=link_to "Create New Cell", new_cell_path %></h1>
 
 <% if @user %>
 	<h2><%= @user.display_name %> Cells:</h2>
@@ -8,6 +6,14 @@ this is the cells index page :)<br>
 
 <ul>
 	<% @cells.each do |cell| %>
-		<li><%=link_to cell.name, cell_path(cell) %></li>
+		<li><%=link_to cell.name, cell_path(cell) %> 
+		Percent Complete: <%=cell.percent_complete%> 
+		Priority: <%=cell.priority%> 
+		Assigned User: 
+			<% if cell.user%> 
+				<%= cell.user.display_name %> 
+			<% else %> 
+				--- 
+			<% end %></li>
 	<% end %>
 </ul>

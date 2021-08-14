@@ -1,11 +1,14 @@
 <%=form_for cell do |f|%>
 	Name: <%=f.text_field :name %><br>
 	Description: <%=f.text_area :description %><br>
-	Priority (1-5): <%=f.number_field :priority %><br>
+	Priority: <%=f.select :priority, ["Low", "Medium", "High", "Urgent"] %><br>
 	Coordinate X: <%=f.number_field :ck_coordinate_x %><br>
 	Coordinate Y: <%=f.number_field :ck_coordinate_y %><br>
 	Assign User: <%=f.collection_select :user_id, User.all, :id, :display_name, include_blank: true %><br>
 	Region: <%=f.collection_select :region_id, Region.all, :id, :name %><br>
 	% Complete: <%=f.select :percent_complete, [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] %><br>
+	<% if button_text == "Create Cell" %>
+		Create Default Tasks?: <%=f.check_box :create_default_tasks, checked: true %><br>
+	<% end %>
 	<%=f.submit button_text %> <%=link_to "Cancel", cells_path %>
 <% end %>
