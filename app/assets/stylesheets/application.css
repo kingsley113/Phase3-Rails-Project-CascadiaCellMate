@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+:root {
+	--main-accent-color: hotpink;
+}
 
  @font-face {
 	 font-family: "Overseer Italic";
@@ -51,6 +54,7 @@
 
 .strikethrough {
 	text-decoration: line-through;
+	color: rgb(77, 77, 77);
 }
 
 .inline {
@@ -71,7 +75,8 @@
 }
 
 .checked_button {
-	color: green;
+	/* color: green; */
+	color: var(--main-accent-color);
 	font-size: 25px;
 	background-color: rgba(255, 255, 255, 0);
 	border: none;
@@ -100,7 +105,7 @@
 }
 
 a {
-	color: hotpink;
+	color: var(--main-accent-color);
 	text-decoration: none;
 }
 
@@ -115,7 +120,7 @@ a {
 	border: 2px;
 	border-style: solid;
 	border-radius: 5px;
-	border-color: hotpink;
+	border-color: var(--main-accent-color);
 	padding: 3px 10px;
 	transform: skew(-20deg);
 	display: inline-block;
@@ -125,3 +130,11 @@ a {
 	transform: skew(20deg);
 }
 
+#all-cells {
+	width: 80%;
+}
+
+table, th, td {
+	border: 1px solid rgb(66, 66, 66);
+	border-collapse: collapse;
+}

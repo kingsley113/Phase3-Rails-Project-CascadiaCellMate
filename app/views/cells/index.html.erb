@@ -19,17 +19,25 @@
 		<h2>All Cells:</h2>
 	<% end %>
 
-	<ul>
+	<table id="all-cells">
+		<tr>
+			<th>Cell Name</th>
+			<th>Priority</th>
+			<th>% Complete</th>
+			<th>Assigned User</th>
+		</tr>
 		<% @cells.each do |cell| %>
-			<li><%=link_to cell.name, cell_path(cell), class: "fallout-font" %> 
-			Percent Complete: <%=cell.percent_complete%> 
-			Priority: <%=cell.priority%> 
-			Assigned User: 
-				<% if cell.user%> 
-					<%= cell.user.display_name %> 
-				<% else %> 
-					--- 
-				<% end %></li>
+			<tr>
+				<td><%=link_to cell.name, cell_path(cell), class: "fallout-font" %></td> 
+				<td><%=cell.priority%></td> 
+				<td><%=cell.percent_complete%></td> 
+				<td>
+					<% if cell.user%> 
+						<%= cell.user.display_name %> 
+					<% else %> 
+						--- 
+					<% end %></td>
+			</tr>
 		<% end %>
-	</ul>
+	</table>
 <div>
