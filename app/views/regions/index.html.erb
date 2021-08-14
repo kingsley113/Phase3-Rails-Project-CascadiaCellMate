@@ -1,1 +1,9 @@
 this is the regions list page :)
+
+<h1>All Regions:</h1>
+
+<ul>
+<% @regions.each do |region| %>
+	<li><%= link_to region.name, region_path(region), class: "fallout-font" %><br>
+	Total cells: <%= region.cells.count%></li>
+<% end %>

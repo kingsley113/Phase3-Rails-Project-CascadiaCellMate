@@ -1,0 +1,6 @@
+<h1> <%= @region.name %></h1>
+<ul>
+	<%@region.cells.each do |cell|%>
+		<li class="fallout-font"><%= link_to cell.name, cell_path(cell)%></li>
+	<% end %>
+</ul>

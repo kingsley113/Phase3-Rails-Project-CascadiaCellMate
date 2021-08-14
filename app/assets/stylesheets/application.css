@@ -32,6 +32,11 @@
 		color: white;
 	}
 
+	h1 {
+		font-family: "Overseer Italic";
+		letter-spacing: .06em;
+	}
+
 	.padded-body {
 		padding: 10px;
 	}
@@ -69,6 +74,7 @@
 .nav-text-italic {
 	font-family: "Overseer Italic";
 	font-size: 20pt;
+	letter-spacing: .06em;
 }
 
 .nav-text {
@@ -89,4 +95,10 @@
 a {
 	color: hotpink;
 	text-decoration: none;
+}
+
+.fallout-font {
+	font-family: "Overseer Italic";
+	font-size: 18pt;
+	letter-spacing: .06em;
 }
