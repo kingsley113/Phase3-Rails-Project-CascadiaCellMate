@@ -108,4 +108,19 @@ a {
 	font-family: "Overseer Italic";
 	/* font-size: 18pt; */
 	letter-spacing: .06em;
+	margin: 0px;
+}
+
+.skew-border-box {
+	border: 2px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: hotpink;
+	padding: 0px 10px;
+	transform: skew(-20deg);
+	display: inline-block;
+}
+
+.skew-correction {
+	transform: skew(20deg);
 }

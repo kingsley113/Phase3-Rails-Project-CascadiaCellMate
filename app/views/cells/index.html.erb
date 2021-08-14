@@ -1,27 +1,33 @@
-<h1 class="fallout-font"><%=link_to "Create New Cell", new_cell_path %></h1>
+<span class="skew-border-box">
+<h1 class="fallout-font skew-correction"><%=link_to "Create New Cell", new_cell_path %></h1>
+</span>
 
-<% if @user %>
-	<h2><%= @user.display_name %> Cells:</h2>
-<% end %>
+<br><br>
 
-<%= form_with url: "/cells", method: :get do |f| %>
-	<%= f.label :query, "Search Cells:" %>
-	<%= f.text_field :query %>
-	<%= f.submit "Search" %>
-<% end %><br>
-
-
-
-<ul>
-	<% @cells.each do |cell| %>
-		<li><%=link_to cell.name, cell_path(cell), class: "fallout-font" %> 
-		Percent Complete: <%=cell.percent_complete%> 
-		Priority: <%=cell.priority%> 
-		Assigned User: 
-			<% if cell.user%> 
-				<%= cell.user.display_name %> 
-			<% else %> 
-				--- 
-			<% end %></li>
+<div>
+	<% if @user %>
+		<h2><%= @user.display_name %> Cells:</h2>
 	<% end %>
-</ul>
+
+	<%= form_with url: "/cells", method: :get do |f| %>
+		<%= f.label :query, "Search Cells:" %>
+		<%= f.text_field :query %>
+		<%= f.submit "Search" %>
+	<% end %><br>
+
+
+
+	<ul>
+		<% @cells.each do |cell| %>
+			<li><%=link_to cell.name, cell_path(cell), class: "fallout-font" %> 
+			Percent Complete: <%=cell.percent_complete%> 
+			Priority: <%=cell.priority%> 
+			Assigned User: 
+				<% if cell.user%> 
+					<%= cell.user.display_name %> 
+				<% else %> 
+					--- 
+				<% end %></li>
+		<% end %>
+	</ul>
+<div>
