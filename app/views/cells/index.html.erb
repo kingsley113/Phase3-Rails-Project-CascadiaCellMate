@@ -6,7 +6,7 @@
 
 <ul>
 	<% @cells.each do |cell| %>
-		<li><%=link_to cell.name, cell_path(cell) %> 
+		<li><%=link_to cell.name, cell_path(cell), class: "fallout-font" %> 
 		Percent Complete: <%=cell.percent_complete%> 
 		Priority: <%=cell.priority%> 
 		Assigned User: 
