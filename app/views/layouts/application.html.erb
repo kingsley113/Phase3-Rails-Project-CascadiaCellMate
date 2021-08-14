@@ -11,23 +11,28 @@
   </head>
 
   <body>
-	this is from the application layout :) we will make this pretty later...
-	<div class="nav-text"> Fallout Cascadia Cell Mate</div> 
-	<%=link_to "Home", root_path %> |
-	<%=link_to "Cell List", cells_path %> | 
-	<%=link_to "Region List", regions_path %> |
-	<% if !@user.blank? %>
-		<%=link_to "My Cells", user_cells_path(@user) %> |
-	<% else %>
-		<%=link_to "Sign In", login_path %> |
-	<% end %>
-	<%=link_to "Quest List", quests_path %> |
-	<%=link_to "All Tasks", tasks_path %>
-	<hr>
-    <%= yield %>
+		<div class="nav-bar">
+			<div class="nav-text-italic inline title"> Fallout</div>
+			<div class="nav-text-italic inline">
+				Cell Mate 
+			</div>
+			<div class="nav-text-italic inline">
+				&nbsp; &nbsp; &nbsp;
+				<%=link_to "Home", root_path %> ϟ
+				<%=link_to "Cell List", cells_path %> ϟ 
+				<%=link_to "Region List", regions_path %> ϟ
+				<% if !@user.blank? %>
+					<%=link_to "My Cells", user_cells_path(@user) %> ϟ
+				<% else %>
+					<%=link_to "Sign In", login_path %> ϟ
+				<% end %>
+				<%=link_to "Quest List", quests_path %> ϟ
+				<%=link_to "All Tasks", tasks_path %> 
+			</div> 
+		</div>
 
-		<br>
-		<br>
-		<%= yield :new_task %>
+		<div class="padded-body">
+			<%= yield %>
+		</div>
   </body>
 </html>
