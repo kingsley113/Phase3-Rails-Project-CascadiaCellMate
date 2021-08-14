@@ -14,7 +14,7 @@ class CellsController < ApplicationController
 	end
 
 	def show
-		@cell = Cell.find(params[:id])
+		set_cell
 	end
 
 	def create
@@ -23,15 +23,25 @@ class CellsController < ApplicationController
 		if @cell.save!
 			redirect_to cell_path(@cell)
 		else
-			# alert: "Please fill out all required fields."
+			# TODO: alert: "Please fill out all required fields."
 			render 'new'
 		end
 	end
 
 	def edit
+		set_cell
 	end
 
 	def update 
+		set_cell
+		# binding.pry
+		@cell.update(cell_params)
+		if @cell.save!
+			redirect_to cell_path(@cell)
+		else
+			# TODO: Add alert message here
+			render 'edit'
+		end
 	end
 
 	def destroy
@@ -42,5 +52,9 @@ class CellsController < ApplicationController
 
 	def cell_params
 		params.require(:cell).permit(:name, :description, :ck_coordinate_x, :ck_coordinate_y, :user_id, :region_id, :percent_complete, :color)
+	end
+
+	def set_cell
+		@cell = Cell.find(params[:id])
 	end
 end

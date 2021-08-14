@@ -6,6 +6,6 @@
 	Coordinate Y: <%=f.number_field :ck_coordinate_y %><br>
 	Assign User: <%=f.collection_select :user_id, User.all, :id, :display_name, include_blank: true %><br>
 	Region: <%=f.collection_select :region_id, Region.all, :id, :name %><br>
-	% Complete: <%=f.number_field :percent_complete, in: 0..100, step: 10 %><br>
+	% Complete: <%=f.select :percent_complete, [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] %><br>
 	<%=f.submit button_text %> <%=link_to "Cancel", cells_path %>
 <% end %>
