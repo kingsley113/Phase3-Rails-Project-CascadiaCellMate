@@ -38,6 +38,12 @@
 		font-weight: normal;
 	}
 
+	h2 {
+		font-family: "Overseer Italic";
+		letter-spacing: .06em;
+		font-weight: normal;
+	}
+
 	.padded-body {
 		padding: 10px;
 	}

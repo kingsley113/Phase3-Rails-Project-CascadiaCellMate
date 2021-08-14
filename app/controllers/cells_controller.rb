@@ -4,8 +4,12 @@ class CellsController < ApplicationController
 		if params[:user_id]
 			@user = User.find(params[:user_id])
 			@cells = @user.cells
+		elsif params[:region_id]
+			@region = Region.find(params[:region_id])
+			@cells = @region.cells
 		else
 			@cells = Cell.all
+			@regions = Region.all
 		end
 	end
 

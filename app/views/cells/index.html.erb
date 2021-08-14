@@ -4,8 +4,11 @@
 	<h2><%= @user.display_name %> Cells:</h2>
 <% end %>
 
+
+<%@regions.all.each do |region|%>
+<h2><%= link_to region.name, region_path(region) %></h2>
 <ul>
-	<% @cells.each do |cell| %>
+	<% region.cells.each do |cell| %>
 		<li><%=link_to cell.name, cell_path(cell), class: "fallout-font" %> 
 		Percent Complete: <%=cell.percent_complete%> 
 		Priority: <%=cell.priority%> 
@@ -17,3 +20,4 @@
 			<% end %></li>
 	<% end %>
 </ul>
+<% end %>
