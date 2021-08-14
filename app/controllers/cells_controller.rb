@@ -11,6 +11,8 @@ class CellsController < ApplicationController
 			@cells = Cell.all
 			@regions = Region.all
 		end
+
+		@cells = @cells.sort_by &:name
 	end
 
 	def new
