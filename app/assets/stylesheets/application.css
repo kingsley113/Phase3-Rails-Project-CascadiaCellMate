@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+	 font-size: 18px;
+ }
+
 .strikethrough {
 	text-decoration: line-through;
 }
@@ -20,4 +25,23 @@
 .inline {
 	/* white-space: nowrap; */
 	display: inline-block;
+}
+
+.clean {
+	list-style: none;
+}
+
+.checked_button {
+	font-size: 25px;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+	margin: 1px;
+}
+
+.unchecked_button {
+	color: green;
+	font-size: 25px;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+	margin: 1px;
 }
