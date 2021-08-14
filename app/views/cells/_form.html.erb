@@ -10,5 +10,8 @@
 	<% if button_text == "Create Cell" %>
 		Create Default Tasks?: <%=f.check_box :create_default_tasks, checked: true %><br>
 	<% end %>
+	Color: <%=f.color_field :color %>
 	<%=f.submit button_text %> <%=link_to "Cancel", cells_path %>
 <% end %>
+
+
