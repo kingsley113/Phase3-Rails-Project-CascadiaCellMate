@@ -29,6 +29,7 @@ Cell.create(
 	region_id: dt.id, 
 	percent_complete: 10, 
 	interior: false
+	priority: "High"
 )
 
 Cell.create(
@@ -40,6 +41,7 @@ Cell.create(
 	region_id: ns.id, 
 	percent_complete: 25, 
 	interior: false
+	priority: "Urgent"
 )
 
 Cell.create(
@@ -51,6 +53,7 @@ Cell.create(
 	region_id: ns.id, 
 	percent_complete: 10, 
 	interior: false
+	priority: "Medium"
 )
 
 Cell.create(
@@ -62,6 +65,7 @@ Cell.create(
 	region_id: ash.id, 
 	percent_complete: 50, 
 	interior: false
+	priority: "Low"
 )
 
 Cell.create(
@@ -73,6 +77,7 @@ Cell.create(
 	region_id: ash.id, 
 	percent_complete: 10, 
 	interior: false
+	priority: "Low"
 )
 
 Cell.create(
@@ -84,6 +89,7 @@ Cell.create(
 	region_id: east.id, 
 	percent_complete: 65, 
 	interior: false
+	priority: "High"
 )
 
 # Tasks
