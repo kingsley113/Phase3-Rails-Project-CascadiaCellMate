@@ -14,6 +14,11 @@
  *= require_self
  */
 
+ @font-face {
+	 font-family: "Overseer Bold Italic";
+	 src: url(/assets/Overseer-Bold-Italic.otf) format("truetype");
+ }
+
  body {
 	 font-size: 18px;
  }
@@ -44,4 +49,10 @@
 	background-color: rgba(255, 255, 255, 0);
 	border: none;
 	margin: 1px;
+}
+
+.nav-text {
+	font-family: "Overseer Bold Italic";
+	/* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+	/* font-family: ; */
 }
