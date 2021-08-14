@@ -116,7 +116,7 @@ a {
 	border-style: solid;
 	border-radius: 5px;
 	border-color: hotpink;
-	padding: 0px 10px;
+	padding: 3px 10px;
 	transform: skew(-20deg);
 	display: inline-block;
 }
@@ -124,3 +124,4 @@ a {
 .skew-correction {
 	transform: skew(20deg);
 }
+
