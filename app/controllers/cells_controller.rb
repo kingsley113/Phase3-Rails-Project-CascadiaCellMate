@@ -1,12 +1,12 @@
 class CellsController < ApplicationController
 
 	def index
+		# binding.pry
 		if params[:user_id]
 			@user = User.find(params[:user_id])
 			@cells = @user.cells
-		elsif params[:region_id]
-			@region = Region.find(params[:region_id])
-			@cells = @region.cells
+		elsif params[:query]
+			@cells = Cell.search(params[:query])
 		else
 			@cells = Cell.all
 			@regions = Region.all
@@ -55,10 +55,12 @@ class CellsController < ApplicationController
 	private
 
 	def cell_params
-		params.require(:cell).permit(:name, :description, :ck_coordinate_x, :ck_coordinate_y, :user_id, :region_id, :percent_complete, :color)
+		params.require(:cell).permit(:name, :description, :ck_coordinate_x, :ck_coordinate_y, :user_id, :region_id, :percent_complete, :color, :query)
 	end
 
 	def set_cell
 		@cell = Cell.find(params[:id])
 	end
+
+	
 end

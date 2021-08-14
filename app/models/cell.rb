@@ -27,4 +27,9 @@ class Cell < ApplicationRecord
 		self.coordinate_x = self.ck_coordinate_x + 30 # TODO: figure out the exact offset
 		self.coordinate_y = self.ck_coordinate_y + 30 # TODO: figure out the exact offset
 	end
+
+	def self.search(query)
+		where("name like ?", "%#{query}%")
+	end
+
 end
