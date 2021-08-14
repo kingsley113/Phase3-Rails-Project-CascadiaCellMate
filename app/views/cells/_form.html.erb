@@ -11,7 +11,12 @@
 		Create Default Tasks?: <%=f.check_box :create_default_tasks, checked: true %><br>
 	<% end %>
 	Color: <%=f.color_field :color %>
-	<%=f.submit button_text %> <%=link_to "Cancel", cells_path %>
+	
+	<br><br>
+	
+	<span class="skew-border-box">
+		<%=f.submit button_text, class: "submit-button skew-correction fallout-font" %></span> 
+	<%=link_to "Cancel", cells_path %>
 <% end %>
 
 
