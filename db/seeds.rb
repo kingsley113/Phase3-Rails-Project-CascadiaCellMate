@@ -28,7 +28,7 @@ Cell.create(
 	user_id: cam.id, 
 	region_id: dt.id, 
 	percent_complete: 10, 
-	interior: false
+	interior: false,
 	priority: "High"
 )
 
@@ -40,7 +40,7 @@ Cell.create(
 	user_id: cam.id, 
 	region_id: ns.id, 
 	percent_complete: 25, 
-	interior: false
+	interior: false,
 	priority: "Urgent"
 )
 
@@ -52,7 +52,7 @@ Cell.create(
 	user_id: jimmy.id, 
 	region_id: ns.id, 
 	percent_complete: 10, 
-	interior: false
+	interior: false,
 	priority: "Medium"
 )
 
@@ -64,7 +64,7 @@ Cell.create(
 	user_id: bob.id, 
 	region_id: ash.id, 
 	percent_complete: 50, 
-	interior: false
+	interior: false,
 	priority: "Low"
 )
 
@@ -76,7 +76,7 @@ Cell.create(
 	user_id: david.id, 
 	region_id: ash.id, 
 	percent_complete: 10, 
-	interior: false
+	interior: false,
 	priority: "Low"
 )
 
@@ -88,7 +88,7 @@ Cell.create(
 	user_id: bob.id, 
 	region_id: east.id, 
 	percent_complete: 65, 
-	interior: false
+	interior: false,
 	priority: "High"
 )
 

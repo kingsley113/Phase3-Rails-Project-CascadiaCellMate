@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_211411) do
     t.string "display_name"
     t.string "password_digest"
     t.string "discord_id"
+    t.string "accent_color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
