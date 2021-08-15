@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find_by_slug(params[:id])
+		set_user
 	end
 
 	def create
@@ -24,9 +24,21 @@ class UsersController < ApplicationController
 	end
 
 	def edit
+		set_user
 	end
 
 	def update 
+		set_user
+
+		@user.update(user_params)
+
+		if @user.save!
+			# set the accent color variable here??
+			redirect_to user_path(@user)
+		else
+			# TODO: add flash error message
+			render 'edit'
+		end
 	end
 
 	def destroy
@@ -39,4 +51,7 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:username, :password, :display_name, :discord_id, :accent_color)
 	end
 
+	def set_user
+		@user = User.find_by_slug(params[:id])
+	end
 end
