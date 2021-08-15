@@ -33,6 +33,16 @@ class Cell < ApplicationRecord
 		self.tasks.select{ |task| task.complete == false}.count
 	end
 
+	def create_default_tasks
+		default_tasks = ["Blocked-out", "Cluttered", "Landscape Textures", "Hooked up to interior", "Optimized", "Navmeshed"]
+		# have this variable set from admin page??
+
+		default_tasks.each do |task_name|
+			task = self.tasks.build(name: task_name)
+			task.save
+		end
+	end
+
 
 	private
 

@@ -29,6 +29,7 @@ class CellsController < ApplicationController
 		@cell = Cell.new(cell_params)
 		# binding.pry
 		if @cell.save!
+			@cell.create_default_tasks
 			redirect_to cell_path(@cell)
 		else
 			# TODO: alert: "Please fill out all required fields."
