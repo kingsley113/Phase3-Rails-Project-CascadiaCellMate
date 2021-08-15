@@ -1,2 +1,9 @@
 this is the login page<br>
 put login form here
+
+<%= form_for :user, url: login_path, method: :post do |f| %>
+	Name: <%= f.text_field :username %> <br>
+	Password: <%= f.password_field :password, id: 'password' %><br>
+	<br>
+	<%= f.submit 'Sign In' %>
+<% end %>
