@@ -23,8 +23,14 @@ class Cell < ApplicationRecord
 
 	attr_accessor :create_default_tasks
 
+	# Custom Methods
 	def to_param
 		self.slug
+	end
+
+	def open_tasks
+		# binding.pry
+		self.tasks.select{ |task| task.complete == false}.count
 	end
 
 

@@ -24,6 +24,7 @@
 			<th>Cell Name</th>
 			<th>Priority</th>
 			<th>% Complete</th>
+			<th>Open Tasks</th>
 			<th>Assigned User</th>
 		</tr>
 		<% @cells.each do |cell| %>
@@ -31,6 +32,7 @@
 				<td><%=link_to cell.name, cell_path(cell)%></td> 
 				<td><%=cell.priority%></td> 
 				<td><%=cell.percent_complete%></td> 
+				<td><%=cell.open_tasks %></td>
 				<td>
 					<% if cell.user%> 
 						<%= cell.user.display_name %> 

@@ -119,9 +119,15 @@ a {
 	transition: .3s ease;
 }
 
+a:hover {
+	/* color: var(--main-accent-color); */
+	text-decoration: underline;
+	transition: .3s ease;
+}
+
 header a:hover {
 	/* color: black; */
-	text-decoration: none;
+	text-decoration: un;
 	/* background-color: var(--main-accent-color); */
 	border: 2px;
 	border-style: solid;
