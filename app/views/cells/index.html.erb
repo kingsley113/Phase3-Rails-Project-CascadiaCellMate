@@ -5,8 +5,8 @@
 <span class="skew-border-box ">
 <%= form_with url: "/cells", method: :get, class: "skew-correction" do |f| %>
 		<%= f.label :query, "Search Cells:" %>
-		<%= f.text_field :query %>
-		<%= f.submit "Search" %>
+		<%= f.text_field :query%>
+		<%= f.submit "Search", class: "submit-button" %>
 	<% end %>
 </span>
 

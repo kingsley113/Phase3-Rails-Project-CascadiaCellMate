@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_211411) do
     t.boolean "interior"
     t.integer "exterior_cell_id"
     t.string "color"
+    t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -49,12 +50,14 @@ ActiveRecord::Schema.define(version: 2021_08_10_211411) do
     t.string "name"
     t.text "description"
     t.text "wiki_link"
+    t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
+    t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -74,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_211411) do
     t.string "password_digest"
     t.string "discord_id"
     t.string "accent_color"
+    t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

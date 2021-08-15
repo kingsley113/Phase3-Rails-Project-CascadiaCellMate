@@ -4,6 +4,7 @@ class CreateQuests < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :description
       t.text :wiki_link
+			t.string :slug
 
       t.timestamps
     end

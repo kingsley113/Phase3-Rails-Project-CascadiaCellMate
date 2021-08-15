@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.string :discord_id
 			t.string :accent_color
+			t.string :slug
 
       t.timestamps
     end

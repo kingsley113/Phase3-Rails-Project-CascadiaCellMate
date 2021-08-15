@@ -7,6 +7,7 @@ class QuestsController < ApplicationController
 	end
 
 	def show
+		@quest = Quest.find_by_slug(params[:id])
 	end
 
 	def edit

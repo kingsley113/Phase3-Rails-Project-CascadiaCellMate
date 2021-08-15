@@ -20,7 +20,9 @@ class CellsController < ApplicationController
 	end
 
 	def show
-		set_cell
+		# set_cell
+		# binding.pry
+		@cell = Cell.find_by_slug([params[:id]])
 	end
 
 	def create

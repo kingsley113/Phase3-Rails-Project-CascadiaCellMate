@@ -14,14 +14,25 @@ class Cell < ApplicationRecord
 
 	# Validations
 	validates :name, :ck_coordinate_x, :ck_coordinate_y, :region_id, presence: true
+	validates :slug, uniqueness: true
 	
 
 	# callbacks
 	before_create :set_adjusted_coordinates
+	after_validation :set_slug, only: [:create, :update]
 
 	attr_accessor :create_default_tasks
 
+	def to_param
+		self.slug
+	end
+
+
 	private
+
+	def set_slug
+		self.slug = self.name.parameterize
+	end
 
 	def set_adjusted_coordinates
 		self.coordinate_x = self.ck_coordinate_x + 30 # TODO: figure out the exact offset

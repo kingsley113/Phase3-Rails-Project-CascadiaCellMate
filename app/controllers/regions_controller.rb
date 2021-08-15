@@ -10,7 +10,8 @@ class RegionsController < ApplicationController
 	end
 
 	def show
-		set_region
+		# set_region
+		@region = Region.find_by_slug(params[:id])
 	end
 
 	def create

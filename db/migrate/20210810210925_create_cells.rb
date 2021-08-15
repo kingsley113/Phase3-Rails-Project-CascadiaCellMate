@@ -14,6 +14,7 @@ class CreateCells < ActiveRecord::Migration[6.1]
       t.boolean :interior
       t.integer :exterior_cell_id
       t.string :color
+			t.string :slug
       
       t.timestamps
     end
