@@ -12,25 +12,39 @@
   </head>
 
   <body>
-		<div class="nav-bar">
-			<div class="nav-text-italic inline title"> Fallout</div>
-			<div class="nav-text-italic inline">
-				Cell Mate 
+		<header>
+			<div class="skew-border-box">
+				<span class="nav-text-italic inline title skew-correction"> Fallout</span>
+				<span class="nav-text-italic inline skew-correction">Cell Mate</span>
 			</div>
-			<div class="nav-text-italic inline">
-				&nbsp; &nbsp; &nbsp;
-				<%=link_to "Home", root_path %> ϟ
-				<%=link_to "Cell List", cells_path %> ϟ 
-				<%=link_to "Region List", regions_path %> ϟ
-				<% if !@user.blank? %>
-					<%=link_to "My Cells", user_cells_path(@user) %> ϟ
+			<nav class="nav-text-italic inline">
+				
+				<ul class="nav-links">
+					<li><%=link_to "Home", root_path %></li> 
+					<li><%=link_to "Cell List", cells_path %></li> 
+					<li><%=link_to "Region List", regions_path %></li> 
+					<% if current_user %>
+						<li><%=link_to "My Cells", user_cells_path(current_user) %></li> 
+					<% else %>
+						<li><%=link_to "Sign In", login_path %> </li>
+					<% end %>
+					<li><%=link_to "Quest List", quests_path %></li> 
+					<li><%=link_to "All Tasks", tasks_path %></li>
+				</ul>
+			</nav> 
+
+			<div >
+				<% if current_user %>
+					<span class="fallout-font nav-text">
+						<%= link_to current_user.display_name, user_path(current_user) %>
+						</span><br>
+					<span> <%= link_to "Logout", logout_path, html_options = {method: :post}%></span>
 				<% else %>
-					<%=link_to "Sign In", login_path %> ϟ
+					<%=link_to "Sign In", login_path %>
 				<% end %>
-				<%=link_to "Quest List", quests_path %> ϟ
-				<%=link_to "All Tasks", tasks_path %> 
-			</div> 
-		</div>
+			</div>
+
+		</header>
 
 		<div class="padded-body">
 			<%= yield %>
