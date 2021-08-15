@@ -4,5 +4,5 @@ Edit <%=@user.username%>'s Details: <br>
 	Display Name: <%=f.text_field :display_name%><br>
 	Accent Color: <%=f.color_field :accent_color %><br>
 	<br>
-	<%= f.submit "Save Changes" %>
+	<%= f.submit "Save Changes", class: "submit-button" %>
 <% end %>	
