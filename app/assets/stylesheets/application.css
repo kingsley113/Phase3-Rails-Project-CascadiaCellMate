@@ -209,3 +209,11 @@ header {
 	padding: 5px 5%;
 	background-color: rgb(53, 53, 53);
 }
+
+.color-col {
+	width: 20px;
+}
+
+.name-col {
+	min-width: 300px;
+}

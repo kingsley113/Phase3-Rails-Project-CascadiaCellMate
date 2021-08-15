@@ -63,7 +63,7 @@ class CellsController < ApplicationController
 	end
 
 	def set_cell
-		@cell = Cell.find(params[:id])
+		@cell = Cell.find_by(slug: params[:id])
 	end
 
 	
