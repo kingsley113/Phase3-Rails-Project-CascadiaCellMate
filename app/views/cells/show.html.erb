@@ -50,5 +50,5 @@ Add New Task:
 	Name: <%= text_field_tag :'task[name]' %><br>
 	Description: <%= text_field_tag :'task[description]'%><br>
 	<%=hidden_field_tag :'task[cell_id]', @cell.id %>
-	<%= submit_tag 'Add task'%>
+	<%= submit_tag 'Add task', class: "submit-button"%>
 <% end %>
