@@ -1,4 +1,5 @@
 class Cell < ApplicationRecord
+	include ActiveModel::Validations
 	# Relationships
 	has_many :tasks
 	has_many :comments
@@ -15,10 +16,11 @@ class Cell < ApplicationRecord
 	# Validations
 	validates :name, :ck_coordinate_x, :ck_coordinate_y, :region_id, presence: true
 	validates :slug, uniqueness: true
-	
+	# validates_with CoordinateValidator, on: :update
 
 	# callbacks
 	before_create :set_adjusted_coordinates
+	# before_validation :verify_coordinates
 	after_validation :set_slug, only: [:create, :update]
 
 	attr_accessor :create_default_tasks
@@ -43,6 +45,17 @@ class Cell < ApplicationRecord
 		end
 	end
 
+	def valid_coordinates?
+		# check if combo of xy coordinates does not already exist
+		# find cells with x coordinates
+		# binding.pry
+		cells = Cell.where(coordinate_x: self.ck_coordinate_x).where(coordinate_y: self.ck_coordinate_y)
+		if cells.count > 1
+			false
+		else
+			true
+		end
+	end
 
 	private
 
@@ -59,4 +72,5 @@ class Cell < ApplicationRecord
 		where("name like ?", "%#{query}%")
 	end
 
+	
 end

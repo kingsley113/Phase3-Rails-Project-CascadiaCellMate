@@ -12,8 +12,9 @@
 	<% end %>
 	Color: <%=f.color_field :color %>
 	
+	<%=f.hidden_field :slug %>
 	<br><br>
-	
+
 	<span class="skew-border-box">
 		<%=f.submit button_text, class: "submit-button skew-correction fallout-font" %></span> 
 	<%=link_to "Cancel", cells_path %>
