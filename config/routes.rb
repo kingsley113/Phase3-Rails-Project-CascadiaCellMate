@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 	# post '/cells/:id/tasks/:task_id' => 'tasks#create'
 	post '/tasks/complete' => 'tasks#complete'
 
+	get '/map' => 'cells#map'
 end
