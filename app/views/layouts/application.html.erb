@@ -12,6 +12,12 @@
   </head>
 
   <body>
+
+		<script>
+			var bodyStyles = document.body.style;
+			bodyStyles.setProperty('--main-accent-color', '<%=current_user.accent_color%>');
+		</script>
+
 		<header>
 			<div class="skew-border-box">
 				<span class="nav-text-italic inline title skew-correction"> Fallout</span>

@@ -1,7 +1,15 @@
 user show page!<br>
 <span class="skew-border-box"> <h1 class="skew-correction fallout-font"><%=@user.display_name%></h1></span>
 <br>
-Username: <%=@user.username%> <br>
-Current Password: Wouldn't you like to know... <br>
-Site Accent Color: <%=@user.accent_color %><br>
+<ul class="clean">
+	<li>Username: <%=@user.username%> </li>
+	<li>Current Password: Wouldn't you like to know... </li>
+	<li>Site Accent Color: <span class="color-box"> </span></li>
+</ul>
 <%= link_to "Edit User Details", edit_user_path(@user)%>
+
+
+
+
+
+

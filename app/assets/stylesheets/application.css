@@ -217,3 +217,10 @@ header {
 .name-col {
 	min-width: 300px;
 }
+
+.color-box {
+	width: 18px;
+	height: 18px;
+	background-color: var(--main-accent-color);
+	display: inline-block;
+}
