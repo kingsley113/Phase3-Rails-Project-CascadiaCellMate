@@ -6,7 +6,7 @@ this is the glorious cell map page
 			grid-column-start: <%=cell.coordinate_x%>;
 			grid-row-start: <%=cell.coordinate_y%>;">
 			<%= link_to(cell_path(cell)) do %>
-			<div class="cell-block"> </div>
+			<div class="cell-block" style="background-color: <%=cell.color%>"> </div>
 			<% end %>
 		</div>
 	

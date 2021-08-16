@@ -12,6 +12,7 @@ dt = Region.create(name: "Downtown Seattle")
 ash = Region.create(name: "Ashlands")
 Region.create(name: "Issaquah Alps")
 east = Region.create(name: "Eastside")
+testcells = Region.create(name: "Test Cells")
 
 # Users
 cam = User.create(username: "kingsley113", password: "12345", display_name: "Cameron")
@@ -94,40 +95,48 @@ Cell.create(
 
 # Test cells for corner and image calibration
 Cell.create(
-	name: "Test - Corner1", 
-	ck_coordinate_x: -35, 
-	ck_coordinate_y: 33, 
-	region_id: east.id, 
-)
+	name: "Test - Corner1",	ck_coordinate_x: -34, ck_coordinate_y: 49, region_id: testcells.id, color: "yellow")
+Cell.create(
+	name: "Test - Corner2", ck_coordinate_x: 56, ck_coordinate_y: 33, region_id: testcells.id, color: "yellow")
+Cell.create(
+	name: "Test - Corner3", ck_coordinate_x: 56, ck_coordinate_y: -27, region_id: testcells.id, color: "yellow")
+Cell.create(
+	name: "Test - Corner4", ck_coordinate_x: -34, ck_coordinate_y: -27, region_id: testcells.id, color: "yellow")
+Cell.create(
+	name: "Test - Center 0 0", ck_coordinate_x: 0, ck_coordinate_y: 0, region_id: testcells.id,color: "red")
 
 Cell.create(
-	name: "Test - Corner2", 
-	ck_coordinate_x: 56, 
-	ck_coordinate_y: 33, 
-	region_id: east.id, 
-)
+	name: "Test - Y Axis 0", ck_coordinate_x: 35, ck_coordinate_y: 33, region_id: testcells.id)
+Cell.create(
+	name: "Test - Y Axis 1", ck_coordinate_x: 35, ck_coordinate_y: 23, region_id: testcells.id)
+Cell.create(
+	name: "Test - Y Axis 2", ck_coordinate_x: 35,	ck_coordinate_y: 13, region_id: testcells.id)
+Cell.create(
+	name: "Test - Y Axis 3", ck_coordinate_x: 35,	ck_coordinate_y: 3,	region_id: testcells.id)
+Cell.create(
+	name: "Test - Y Axis 4", ck_coordinate_x: 35,	ck_coordinate_y: -7, region_id: testcells.id)
+Cell.create(
+	name: "Test - Y Axis 5", ck_coordinate_x: 35, ck_coordinate_y: -17, region_id: testcells.id)
+Cell.create(
+	name: "Test - Y Axis 6", ck_coordinate_x: 35, ck_coordinate_y: -27, region_id: testcells.id)
+Cell.create(
+	name: "Test - Y Axis 7", ck_coordinate_x: 35, ck_coordinate_y: -37, region_id: testcells.id)
+Cell.create(
+	name: "Test - Y Axis 8", ck_coordinate_x: 35, ck_coordinate_y: -47, region_id: testcells.id)
 
 Cell.create(
-	name: "Test - Corner3", 
-	ck_coordinate_x: 56, 
-	ck_coordinate_y: -49, 
-	region_id: east.id, 
-)
-
+	name: "Test - Group 1", ck_coordinate_x: 5, ck_coordinate_y: 5, region_id: testcells.id)	
 Cell.create(
-	name: "Test - Corner4", 
-	ck_coordinate_x: -35, 
-	ck_coordinate_y: -49, 
-	region_id: east.id, 
-)
-
+	name: "Test - Group 2", ck_coordinate_x: 7, ck_coordinate_y: 5, region_id: testcells.id)	
 Cell.create(
-	name: "Test - Center 0 0", 
-	ck_coordinate_x: 0, 
-	ck_coordinate_y: 0, 
-	region_id: east.id, 
-)
-
+	name: "Test - Group 3", ck_coordinate_x: 3, ck_coordinate_y: 5, region_id: testcells.id)	
+Cell.create(
+	name: "Test - Group 4", ck_coordinate_x: 5, ck_coordinate_y: 7, region_id: testcells.id)	
+Cell.create(
+	name: "Test - Group 5", ck_coordinate_x: 5, ck_coordinate_y: 3, region_id: testcells.id)	
+Cell.create(
+	name: "Test - Group 6", ck_coordinate_x: 5, ck_coordinate_y: 9, region_id: testcells.id)	
+															
 
 # Tasks
 Cell.all.each do |cell| 

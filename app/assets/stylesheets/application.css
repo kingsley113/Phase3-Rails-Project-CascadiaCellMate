@@ -227,33 +227,31 @@ header {
 
 .grid-container {
 	width: 1200px;
-	height: 1200px;
+	height: 1015px;
 	/* min-width: 1000px;
 	min-height: 1000px; */
 	display: grid;
-	grid-template: repeat(65, 1fr) / repeat(65, 1fr);
+	grid-template: repeat(77, 1fr) / repeat(91, 1fr);
 	/* justify-content: stretch; */
 	gap: 0px;
 	border: 1px;
 	border-style: solid;
 
 	place-self: stretch;
-	background-image: url("cascadiagrid2.png");
-	background-size: contain;
+	background-image: url("AshTestMap2trans.png");
+	background-size: 1199px 1015px;
+	/* opacity: .5; */
 	/* padding-bottom: 100%; */
-}
-
-.square{
-
 }
 
 .cell-block {
 	background-color: white;
 	display: flex;
-	border: 1px;
+	/* border: 1px;
 	border-style: solid;
-	border-color: white;
+	border-color: white; */
 	place-self: stretch;
 	height: 100%;
 	width: 100%;
+	opacity: 1;
 }
