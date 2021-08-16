@@ -64,8 +64,8 @@ class Cell < ApplicationRecord
 	end
 
 	def set_adjusted_coordinates
-		self.coordinate_x = self.ck_coordinate_x + 30 # TODO: figure out the exact offset
-		self.coordinate_y = self.ck_coordinate_y + 30 # TODO: figure out the exact offset
+		self.coordinate_x = self.ck_coordinate_x + 35  
+		self.coordinate_y = self.ck_coordinate_y + 50  
 	end
 
 	def self.search(query)

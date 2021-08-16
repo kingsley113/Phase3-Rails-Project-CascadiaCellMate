@@ -92,6 +92,43 @@ Cell.create(
 	priority: "High"
 )
 
+# Test cells for corner and image calibration
+Cell.create(
+	name: "Test - Corner1", 
+	ck_coordinate_x: -35, 
+	ck_coordinate_y: 33, 
+	region_id: east.id, 
+)
+
+Cell.create(
+	name: "Test - Corner2", 
+	ck_coordinate_x: 56, 
+	ck_coordinate_y: 33, 
+	region_id: east.id, 
+)
+
+Cell.create(
+	name: "Test - Corner3", 
+	ck_coordinate_x: 56, 
+	ck_coordinate_y: -49, 
+	region_id: east.id, 
+)
+
+Cell.create(
+	name: "Test - Corner4", 
+	ck_coordinate_x: -35, 
+	ck_coordinate_y: -49, 
+	region_id: east.id, 
+)
+
+Cell.create(
+	name: "Test - Center 0 0", 
+	ck_coordinate_x: 0, 
+	ck_coordinate_y: 0, 
+	region_id: east.id, 
+)
+
+
 # Tasks
 Cell.all.each do |cell| 
 	Task.create(name: "Block out buildings", cell_id: cell.id)

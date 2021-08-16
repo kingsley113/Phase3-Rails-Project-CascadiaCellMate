@@ -1,2 +1,17 @@
 this is the glorious cell map page
 <div class="grid-container">
+<%@cells.each do |cell|%>
+	
+		<div  style="
+			grid-column-start: <%=cell.coordinate_x%>;
+			grid-row-start: <%=cell.coordinate_y%>;">
+			<%= link_to(cell_path(cell)) do %>
+			<div class="cell-block"> </div>
+			<% end %>
+		</div>
+	
+<% end %>
+
+
+
+</div>
