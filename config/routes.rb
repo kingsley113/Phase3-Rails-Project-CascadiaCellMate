@@ -27,5 +27,7 @@ Rails.application.routes.draw do
 	# post '/cells/:id/tasks/:task_id' => 'tasks#create'
 	post '/tasks/complete' => 'tasks#complete'
 
-	get '/map' => 'cells#map'
+	get '/map' => 'cells#map_cell_color'
+	get '/map_user_colors' => 'cells#map_user_color'
+	get '/map_progress_colors' => 'cells#map_progress_color'
 end

@@ -225,6 +225,15 @@ header {
 	display: inline-block;
 }
 
+.center-container {
+	/* display: block;
+	margin-left: auto;
+	margin-right: auto; */
+	/* align-content: center; */
+	display: flex;
+  justify-content: center;
+}
+
 .grid-container {
 	width: 1200px;
 	height: 1015px;
@@ -234,12 +243,12 @@ header {
 	grid-template: repeat(77, 1fr) / repeat(91, 1fr);
 	/* justify-content: stretch; */
 	gap: 0px;
-	border: 1px;
-	border-style: solid;
+	/* border: 1px;
+	border-style: solid; */
 
 	place-self: stretch;
 	background-image: url("AshTestMap2trans.png");
-	background-size: 1199px 1015px;
+	background-size: 1200px 1015px;
 	/* opacity: .5; */
 	/* padding-bottom: 100%; */
 }
@@ -255,3 +264,51 @@ header {
 	width: 100%;
 	opacity: 1;
 }
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width:  200px;
+	bottom: 150%;
+	left: 50%;
+	margin-left: -100px;
+
+	background-color: rgb(54, 54, 54);
+	color: var(--main-accent-color);
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+
+	position: absolute;
+	z-index: 1;
+
+}
+
+.tooltip .tooltiptext::after {
+	content: " ";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color:rgb(54, 54, 54)	transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+
+}
+
+.map-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 5%;
+	/* background-color: rgb(22, 22, 22); */
+}
+

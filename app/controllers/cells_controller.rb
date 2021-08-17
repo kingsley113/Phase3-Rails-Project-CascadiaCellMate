@@ -1,8 +1,18 @@
 class CellsController < ApplicationController
 
-	def map
-		@cells = Cell.all
+	def map_cell_color
+		all_cells
 	end
+
+	def map_progress_color
+		all_cells
+	end
+
+	def map_user_color
+		all_cells
+	end
+
+
 
 	def index
 		# binding.pry
@@ -83,6 +93,10 @@ class CellsController < ApplicationController
 	def set_cell
 		# @cell = Cell.find_by(id: params[:id])
 		@cell = Cell.find_by_slug([params[:id]])
+	end
+
+	def all_cells
+		@cells = Cell.all
 	end
 
 	
