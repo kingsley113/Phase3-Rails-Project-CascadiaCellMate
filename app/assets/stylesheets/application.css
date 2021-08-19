@@ -31,11 +31,7 @@
 	src: url(/assets/Overseer.otf) format("truetype");
 }
 
-	*{
-		
-	}
-
- body {
+	body {
 		font-family: "Roboto", sans-serif;
 		font-size: 18px;
 		margin: 0;

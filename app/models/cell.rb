@@ -64,8 +64,14 @@ class Cell < ApplicationRecord
 	end
 
 	def set_adjusted_coordinates
-		self.coordinate_x = self.ck_coordinate_x + 35  
-		self.coordinate_y = self.ck_coordinate_y + 50  
+		# self.coordinate_x = self.ck_coordinate_x + 35  #old
+		# self.coordinate_y = self.ck_coordinate_y + 50  #old
+		# Set X grid coordinate
+		self.coordinate_x = self.ck_coordinate_x + 32
+		# Set Y grid coordinate 
+		self.coordinate_y = self.ck_coordinate_y + 44 #+ (77 - self.ck_coordinate_y)
+		  # Top cell 32, bottom cell -44 = 77 total height
+
 	end
 
 	def self.search(query)

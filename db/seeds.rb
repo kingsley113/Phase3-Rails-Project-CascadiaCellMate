@@ -60,8 +60,8 @@ Cell.create(
 Cell.create(
 	name: "Buckley", 
 	description: "Ruin town of buckley at south end of map", 
-	ck_coordinate_x: 67, 
-	ck_coordinate_y: 68, 
+	ck_coordinate_x: 50, 
+	ck_coordinate_y: -32, 
 	user_id: bob.id, 
 	region_id: ash.id, 
 	percent_complete: 50, 
@@ -72,8 +72,8 @@ Cell.create(
 Cell.create(
 	name: "Covington", 
 	description: "Town of covington", 
-	ck_coordinate_x: 67, 
-	ck_coordinate_y: 69, 
+	ck_coordinate_x: 48, 
+	ck_coordinate_y: -34, 
 	user_id: david.id, 
 	region_id: ash.id, 
 	percent_complete: 10, 
@@ -84,7 +84,7 @@ Cell.create(
 Cell.create(
 	name: "Bellevue", 
 	description: "Ground zero of the war, crater of bellevue", 
-	ck_coordinate_x: 54, 
+	ck_coordinate_x: 42, 
 	ck_coordinate_y: 26, 
 	user_id: bob.id, 
 	region_id: east.id, 
@@ -95,18 +95,18 @@ Cell.create(
 
 # Test cells for corner and image calibration
 Cell.create(
-	name: "Test - Corner1",	ck_coordinate_x: -34, ck_coordinate_y: 49, region_id: testcells.id, color: "yellow")
+	name: "Test - Corner1",	ck_coordinate_x: -32, ck_coordinate_y: 32, region_id: testcells.id, color: "yellow")
 Cell.create(
-	name: "Test - Corner2", ck_coordinate_x: 56, ck_coordinate_y: 33, region_id: testcells.id, color: "yellow")
+	name: "Test - Corner2", ck_coordinate_x: 58, ck_coordinate_y: 32, region_id: testcells.id, color: "yellow")
 Cell.create(
-	name: "Test - Corner3", ck_coordinate_x: 56, ck_coordinate_y: -27, region_id: testcells.id, color: "yellow")
+	name: "Test - Corner3", ck_coordinate_x: 58, ck_coordinate_y: -44, region_id: testcells.id, color: "yellow")
 Cell.create(
-	name: "Test - Corner4", ck_coordinate_x: -34, ck_coordinate_y: -27, region_id: testcells.id, color: "yellow")
+	name: "Test - Corner4", ck_coordinate_x: -32, ck_coordinate_y: -44, region_id: testcells.id, color: "yellow")
 Cell.create(
 	name: "Test - Center 0 0", ck_coordinate_x: 0, ck_coordinate_y: 0, region_id: testcells.id,color: "red")
 
 Cell.create(
-	name: "Test - Y Axis 0", ck_coordinate_x: 35, ck_coordinate_y: 33, region_id: testcells.id)
+	name: "Test - Y Axis 0", ck_coordinate_x: 35, ck_coordinate_y: 32, region_id: testcells.id)
 Cell.create(
 	name: "Test - Y Axis 1", ck_coordinate_x: 35, ck_coordinate_y: 23, region_id: testcells.id)
 Cell.create(
@@ -121,8 +121,8 @@ Cell.create(
 	name: "Test - Y Axis 6", ck_coordinate_x: 35, ck_coordinate_y: -27, region_id: testcells.id)
 Cell.create(
 	name: "Test - Y Axis 7", ck_coordinate_x: 35, ck_coordinate_y: -37, region_id: testcells.id)
-Cell.create(
-	name: "Test - Y Axis 8", ck_coordinate_x: 35, ck_coordinate_y: -47, region_id: testcells.id)
+# Cell.create(
+# 	name: "Test - Y Axis 8", ck_coordinate_x: 35, ck_coordinate_y: -47, region_id: testcells.id)
 
 Cell.create(
 	name: "Test - Group 1", ck_coordinate_x: 5, ck_coordinate_y: 5, region_id: testcells.id)	
