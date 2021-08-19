@@ -67,9 +67,9 @@ class Cell < ApplicationRecord
 		# self.coordinate_x = self.ck_coordinate_x + 35  #old
 		# self.coordinate_y = self.ck_coordinate_y + 50  #old
 		# Set X grid coordinate
-		self.coordinate_x = self.ck_coordinate_x + 32
+		self.coordinate_x = self.ck_coordinate_x + 33
 		# Set Y grid coordinate 
-		self.coordinate_y = self.ck_coordinate_y + 44 #+ (77 - self.ck_coordinate_y)
+		self.coordinate_y = 78 - (self.ck_coordinate_y + 45) #+ (77 - self.ck_coordinate_y)
 		  # Top cell 32, bottom cell -44 = 77 total height
 
 	end

@@ -22,31 +22,31 @@
 	<div class="grid-container">
 	<%cells.each do |cell|%>
 		
-			<div class="tooltip" style="
-				grid-column-start: <%=cell.coordinate_x%>;
-				grid-row-start: <%=cell.coordinate_y%>;">
-				<%= link_to(cell_path(cell)) do %>
-				<div class="cell-block" style="background-color: 
-				
-				<% case color_mode %>
-				<% when "cell" %>
-					<%=cell.color%>
-				<% when "progress" %>
-					<%=cell.color%>
-				<% when "user" %>
-					
-					<% if cell.user %>
-						
-						<%=cell.user.accent_color%>
-					<% else %>
-						rgb(192, 192, 192)
-					<% end %>
+		<div class="tooltip" style="
+			grid-column-start: <%=cell.coordinate_x%>;
+			grid-row-start: <%=cell.coordinate_y%>;">
+			<%= link_to(cell_path(cell)) do %>
+			<div class="cell-block"  
+			
+			<% case color_mode %>
+			<% when "cell" %>
+				style="background-color: <%=cell.color%>"
+
+			<% when "progress" %>
+				id="cell-progress-<%cell.percent_complete%>"
+
+			<% when "user" %>
+				<% if cell.user %>
+					style="background-color: <%=cell.user.accent_color%>"
+				<% else %>
+					id="default-cell-color"
 				<% end %>
-				
-				"> </div>
-				<% end %>
-				<span class="tooltiptext"><%=cell.name%></span>
-			</div>
+			<% end %>
+			
+			> </div>
+			<% end %>
+			<span class="tooltiptext"><%=cell.name%></span>
+		</div>
 		
 	<% end %>
 
