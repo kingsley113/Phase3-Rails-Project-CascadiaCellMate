@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 2021_08_10_211411) do
   create_table "cells", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.text "priority"
+    t.text "priority", default: "Low"
     t.integer "ck_coordinate_x"
     t.integer "ck_coordinate_y"
     t.integer "coordinate_x"
     t.integer "coordinate_y"
     t.integer "user_id"
     t.integer "region_id"
-    t.integer "percent_complete"
+    t.integer "percent_complete", default: 0
     t.boolean "interior"
     t.integer "exterior_cell_id"
     t.string "color"
