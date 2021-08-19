@@ -40,7 +40,7 @@ Cell.create(
 	ck_coordinate_y: 11, 
 	user_id: cam.id, 
 	region_id: ns.id, 
-	percent_complete: 25, 
+	percent_complete: 20, 
 	interior: false,
 	priority: "Urgent"
 )
@@ -88,7 +88,7 @@ Cell.create(
 	ck_coordinate_y: 26, 
 	user_id: bob.id, 
 	region_id: east.id, 
-	percent_complete: 65, 
+	percent_complete: 60, 
 	interior: false,
 	priority: "High"
 )

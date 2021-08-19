@@ -16,6 +16,8 @@
 
 :root {
 	--main-accent-color: hotpink;
+	--grid-width: 1200px;
+	--grid-height: 1015px;
 }
 
 /* Fonts */
@@ -224,39 +226,25 @@ header {
 }
 
 .center-container {
-	/* display: block;
-	margin-left: auto;
-	margin-right: auto; */
-	/* align-content: center; */
 	display: flex;
   justify-content: center;
 }
 
 .grid-container {
-	width: 1200px;
-	height: 1015px;
-	/* min-width: 1000px;
-	min-height: 1000px; */
+	width: var(--grid-width);
+	height: var(--grid-height);
 	display: grid;
 	grid-template: repeat(77, 1fr) / repeat(91, 1fr);
-	/* justify-content: stretch; */
 	gap: 0px;
-	/* border: 1px;
-	border-style: solid; */
 
 	place-self: stretch;
 	background-image: url("AshTestMap2trans.png");
 	background-size: 1200px 1015px;
-	/* opacity: .5; */
-	/* padding-bottom: 100%; */
 }
 
 .cell-block {
 	background-color: white;
 	display: flex;
-	/* border: 1px;
-	border-style: solid;
-	border-color: white; */
 	place-self: stretch;
 	height: 100%;
 	width: 100%;
@@ -311,6 +299,29 @@ header {
 	/* border-style: solid; */
 	border-bottom: 1px solid rgb(61, 61, 61);
 
+}
+
+.dark-font {
+	color: rgb(31, 31, 31);
+	/* text-align: center; */
+}
+
+.progress-legend {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	/* flex: auto; */
+	width: var(--grid-width);
+
+	text-decoration: none;
+	list-style: none;
+}
+
+.progress-legend li {
+	display: inline-flex;
+	margin: auto;
+	/* padding: 0px 10px; */
+	/* margin: 0px 10px; */
 }
 
 #default-cell-color {

@@ -33,8 +33,11 @@
 				style="background-color: <%=cell.color%>"
 
 			<% when "progress" %>
-				id="cell-progress-<%cell.percent_complete%>"
-
+				<%if cell.percent_complete %>
+					id="cell-progress-<%=cell.percent_complete%>"
+				<% else %>
+					id="default-cell-color"
+				<% end %>
 			<% when "user" %>
 				<% if cell.user %>
 					style="background-color: <%=cell.user.accent_color%>"
