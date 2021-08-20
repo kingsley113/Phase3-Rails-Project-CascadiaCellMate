@@ -1,0 +1,33 @@
+<h3>Outstanding Tasks:</h3>
+<ul class="clean">
+	<% cell.tasks.each do |task| %>
+		<% if task.complete %>
+			<li class="strikethrough">
+		<% else %>
+			<li >
+		<% end %>
+
+		<%= form_tag task_path(task), method: :patch, class: "inline" do %>
+			<% if !task.complete %>
+				<%= hidden_field_tag :'task[complete]', true %>
+				<%= submit_tag "\u{25A1}", class: "unchecked_button" %>
+			<% else %>
+				<%= hidden_field_tag :'task[complete]', false %>
+				<%= submit_tag "\u{25A0}", class: "checked_button" %>
+			<% end %>
+		<% end %>
+
+		<%= task.name %> 
+		</li>
+	<% end %>
+</ul>
+<br>
+
+
+Add New Task:
+<%= form_tag tasks_path do %>
+	Name: <%= text_field_tag :'task[name]' %><br>
+	Description: <%= text_field_tag :'task[description]'%><br>
+	<%=hidden_field_tag :'task[cell_id]', cell.id %>
+	<%= submit_tag 'Add task', class: "submit-button"%>
+<% end %>

@@ -353,3 +353,45 @@ header {
 #cell-progress-80 {	background-color: #66ff00;}
 #cell-progress-90 {	background-color: #33ff00;}
 #cell-progress-100 { background-color: #00FF00;}
+
+
+/* Cell Show Page Styles */
+
+#show-header {
+	width: 90vw;
+	display: flex;
+	justify-content: space-between;
+	/* flex-direction: column; */
+	/* align-content: flex-end; */
+	/* margin: auto; */
+	margin-bottom: auto;
+}
+
+.cell-grid-container {
+	width: 90vw;
+	height: auto;
+	min-height: 300px;
+	display: grid;
+	grid-template: 1fr 1fr / 1fr 1fr 1fr;
+	gap: 10px;
+}
+
+#show-container {
+	grid-column-start: 1;
+	grid-row-start: 1;
+}
+
+#tasks-container {
+	grid-column-start: 2;
+	grid-row-start: 1;
+}
+
+#quest-container {
+	grid-column-start: 3;
+	grid-row-start: 1;
+}
+
+#comment-container {
+	grid-column: 1/4;
+	grid-row-start: 2;
+}
