@@ -401,22 +401,26 @@ header {
 }
 
 .cell-info-table {
-	width: 90%;
+	width: 95%;
 }
 
-.col-35 {
-	width: 50%;
+.col-1 {
+	width: 40%;
 	/* text-justify: end; */
 }
 
-/* .col-65 {
-	width: 65%;
+/* .col-2 {
+	width: 70%;
 } */
 
 .right-align-text {
 	text-align: right;
 	/* padding-top: 6px;
 	padding-bottom: 6px; */
+	/* height: 40px; */
+}
+
+.tr-height{
 	height: 40px;
 }
 
@@ -424,8 +428,15 @@ header {
 	border-collapse: collapse;
 	/* border: 0px solid red; */
 	border: none
+	/* width: 95%; */
 }
 
 .no-border {
 	border: none
+}
+
+/* form styles */
+
+.input-field {
+	width: 100%;
 }
