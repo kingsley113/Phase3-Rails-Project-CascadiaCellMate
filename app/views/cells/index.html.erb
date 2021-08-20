@@ -24,24 +24,31 @@
 			<th class="color-col"></th>
 			<th class="name-col">Cell Name</th>
 			<th>Priority</th>
+			<th>X</th>
+			<th>Y</th>
 			<th>% Complete</th>
 			<th>Open Tasks</th>
 			<th>Assigned User</th>
+			<th>Region</th>
 		</tr>
 		<% @cells.each do |cell| %>
 			<tr>
 				<td style="background-color: <%=cell.color%>">  </td>
 				<td><%=link_to cell.name, cell_path(cell)%></td> 
 				<td><%=cell.priority%></td> 
+				<td><%=cell.ck_coordinate_x%></td> 
+				<td><%=cell.ck_coordinate_y%></td> 
 				<td><%=cell.percent_complete%></td> 
 				<td><%=cell.open_tasks %></td>
 				<td>
 					<% if cell.user%> 
-						<%= cell.user.display_name %> 
+						<%=cell.user.display_name %> 
 					<% else %> 
 						--- 
 					<% end %></td>
+					<td><%=cell.region.name %></td>
 			</tr>
+			
 		<% end %>
 	</table>
 <div>
