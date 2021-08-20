@@ -27,21 +27,17 @@
 <br>
 
 
-<div class="center-container">Add New Task</div>
-<table class="no-border cell-info-table">
-	<colgroup class=>
-		<col span="1" class="col-1">
-		<col span="1" class="col-2">
-	</colgroup>
+<div class="center-container"><h3>Add New Task</h3></div>
 
-<%= form_tag tasks_path do %>
-	<tr>
-	<td class="right-align-text">Name:</td> <td><%= text_field_tag :'task[name]', "", class: "input-field" %></td>
-	</tr>
-	<tr>
-	<td class="right-align-text">Description:</td> <td><%= text_field_tag :'task[description]', "", class: "input-field"%></td>
-	</tr>
-	</table>
+<%= form_tag tasks_path, class: "center-container" do %>
+	<span class="inline" id="new-task-input">
+		<%= text_field_tag :'task[name]', "", class: "input-field" %>
+	</span>
+	
 	<%=hidden_field_tag :'task[cell_id]', cell.id %>
-	<div class="center-container tr-height"><%= submit_tag 'Add task', class: "submit-button"%></div>
+	
+	<span class="inline border-box-skinny">
+		<%= submit_tag 'Add task', class: "submit-button "%>
+	</span>
 <% end %>
+
