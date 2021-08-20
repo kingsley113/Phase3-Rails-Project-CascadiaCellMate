@@ -1,17 +1,27 @@
-<b>Description:</b> <%= cell.description %><br>
-<b>Priority:</b> <%= cell.priority %><br>
-<b>CK Coordinates: X:</b> <%= cell.ck_coordinate_x %> <b>Y:</b><%= cell.ck_coordinate_y %><br>
-<b>Adj Coordinates: X:</b> <%= cell.coordinate_x %> <b>Y:</b><%= cell.coordinate_y %><br>
-<b>User:</b> 
+<div class="center-container">
+	<h3>Cell Info</h3><br>
+</div>
+
+<table class="no-border">
+	<colgroup class=>
+		<col span="1" class="col-35">
+		<col span="1" class="col-65">
+	</colgroup>
+
+	<tr> <td class="right-align-text"><b>Description: &nbsp;</b></td> <td><%= cell.description %></td>	</tr>
+<tr> <td class="right-align-text"><b>Priority: &nbsp;</b></td> <td><%= cell.priority %></td>	</tr>
+<tr> <td class="right-align-text"><b>Coordinates: &nbsp;</b> </td> <td><b>X:</b> <%= cell.ck_coordinate_x %> <b>Y:</b><%= cell.ck_coordinate_y %></td>	</tr>
+
+<tr> <td class="right-align-text"><b>User:&nbsp;</b></td> <td> 
 <% if cell.user%> 
 	<%= cell.user.display_name %> 
 <% else %> 
 	--- 
-<% end %> <br>
-<b>Region:</b> <%= cell.region.name %><br>
-<b>% Complete:</b> <%= cell.percent_complete %><br>
-<b>Color: </b> &nbsp;<span style="background-color:<%=cell.color%>;padding-left:60px"></span><br>
-
+<% end %> </td>	</tr>
+<tr> <td class="right-align-text"><b>Region:&nbsp;</b> </td> <td><%= cell.region.name %></td>	</tr>
+<tr> <td class="right-align-text"><b>% Complete:&nbsp;</b> </td> <td><%= cell.percent_complete %></td>	</tr>
+<tr> <td class="right-align-text"><b>Color: &nbsp;</b> </td> <td> &nbsp;<span style="background-color:<%=cell.color%>;padding-left:60px"></span></td>	</tr>
+</table>
 
 
 

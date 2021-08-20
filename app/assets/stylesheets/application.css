@@ -55,6 +55,10 @@
 		font-weight: normal;
 	}
 
+	h3 {
+		margin: 2px;
+	}
+
 	.padded-body {
 		padding: 10px;
 	}
@@ -394,4 +398,34 @@ header {
 #comment-container {
 	grid-column: 1/4;
 	grid-row-start: 2;
+}
+
+.cell-info-table {
+	width: 90%;
+}
+
+.col-35 {
+	width: 50%;
+	/* text-justify: end; */
+}
+
+/* .col-65 {
+	width: 65%;
+} */
+
+.right-align-text {
+	text-align: right;
+	/* padding-top: 6px;
+	padding-bottom: 6px; */
+	height: 40px;
+}
+
+.no-border tr td {
+	border-collapse: collapse;
+	/* border: 0px solid red; */
+	border: none
+}
+
+.no-border {
+	border: none
 }
