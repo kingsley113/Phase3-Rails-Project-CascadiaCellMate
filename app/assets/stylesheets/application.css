@@ -396,7 +396,7 @@ header {
 .cell-grid-container {
 	width: 90vw;
 	height: auto;
-	min-height: 300px;
+	min-height: 250px;
 	display: grid;
 	grid-template: 1fr 1fr / 1fr 1fr 1fr;
 	gap: 10px;
@@ -480,6 +480,8 @@ textarea {
 	border-radius: 5px;
 	background-color: var(--input-field-background-color);
 	width: 100%;
+	font-family: "Roboto", sans-serif;
+	font-size: 14pt;
 }
 
 .error {

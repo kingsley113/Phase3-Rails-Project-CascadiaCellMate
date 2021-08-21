@@ -27,11 +27,11 @@
 <br>
 
 
-<div class="center-container"><h3>Add New Task</h3></div>
+
 
 <%= form_tag tasks_path, class: "center-container" do %>
 	<span class="inline" id="new-task-input">
-		<%= text_field_tag :'task[name]', "", class: "input-field" %>
+		<%= text_field_tag :'task[name]', "", class: "input-field", placeholder: "Add New Task Here" %>
 	</span>
 	
 	<%=hidden_field_tag :'task[cell_id]', cell.id %>
