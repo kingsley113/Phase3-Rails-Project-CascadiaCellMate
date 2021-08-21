@@ -550,7 +550,7 @@ hr {
 }
 
 .comment .post-date {
-	min-width: 200px;
+	min-width: 215px;
 	/* justify-content: flex-end; */
 }
 
@@ -558,4 +558,15 @@ hr {
 	/* justify-content: left; */
 	/* margin-left: auto; */
 	margin-right: auto;
+}
+
+.edit-icon {
+	height: 20px;
+	padding-right: 10px;
+	/* filter: hue-rotate(90deg); } */
+}
+
+.edit-placeholder {
+	width: 20px;
+	padding-right: 10px;
 }

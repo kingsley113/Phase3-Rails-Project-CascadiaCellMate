@@ -19,19 +19,29 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
+		set_comment
 	end
 
 	def update
-		comment = Comment.find(params[:id])
-		comment.update(comment_params)
+		set_comment
+		@comment.update(comment_params)
 
-		redirect_to cell_path(comment.cell)
+		redirect_to cell_path(@comment.cell)
 	end
 
-	def delete
+	def destroy
+		set_comment
+		cell = @comment.cell
+		@comment.delete
+
+		redirect_to cell_path(cell)
 	end
 
 	private
+
+	def set_comment
+		@comment = Comment.find(params[:id])
+	end
 
 	def comment_params
 		params.require(:comment).permit(:content, :user_id, :cell_id)

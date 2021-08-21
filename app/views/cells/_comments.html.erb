@@ -8,6 +8,15 @@
 	<%else%>
 		<%cell.comments.each_with_index do |comment, index|%>
 			<div class="comment">
+				<div class="edit">
+					<%if comment.user == current_user%>
+						<%=link_to edit_comment_path(comment) do %>
+							<%= image_tag "edit-icon.png", class: "edit-icon"%>
+						<%end%>
+					<%else%>
+						<div class="edit-placeholder"></div>
+					<%end%>
+				</div>
 				<div class="user">
 					#<%=index +1%>:  <%=comment.user.display_name%> said:
 				</div>
