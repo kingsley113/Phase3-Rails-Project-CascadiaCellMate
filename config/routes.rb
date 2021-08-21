@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 		resources :cells, only: [:show, :index]
 	end
 
-	resources :cells, :users, :regions, :tasks, :quests 
+	resources :cells, :users, :regions, :tasks, :quests, :comments 
 
 	root 'welcome#home'
 

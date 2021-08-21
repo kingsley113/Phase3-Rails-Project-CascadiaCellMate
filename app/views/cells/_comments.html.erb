@@ -1,3 +1,15 @@
 <div class="center-container">
 	<h3>Comments</h3>
 </div>
+
+<%= form_tag comment_path, class: "center-container" do %>
+	<span class="inline" id="new-task-input">
+		<%= text_field_tag :'task[name]', "", class: "input-field" %>
+	</span>
+	
+	<%=hidden_field_tag :'task[cell_id]', cell.id %>
+	
+	<span class="inline border-box-skinny">
+		<%= submit_tag 'Add task', class: "submit-button "%>
+	</span>
+<% end %>
