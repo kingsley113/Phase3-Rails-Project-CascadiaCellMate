@@ -37,7 +37,7 @@
 
 	body {
 		font-family: "Roboto", sans-serif;
-		font-size: 18px;
+		font-size: 12pt;
 		margin: 0;
 		/* padding: 10px; */
 		background-color: rgb(27, 27, 27);
@@ -189,14 +189,7 @@ a:hover {
 }
 
 
-#all-cells {
-	width: 80%;
-}
 
-table, th, td {
-	border: 1px solid rgb(66, 66, 66);
-	border-collapse: collapse;
-}
 
 .submit-button {
 	background-color: rgba(0, 0, 0, 0);
@@ -242,13 +235,49 @@ header {
 
 }
 
+/* Table Styles */
+
 .color-col {
+	width: 20px;
+}
+
+.edit-col {
 	width: 20px;
 }
 
 .name-col {
 	min-width: 300px;
 }
+
+.coor-column {
+	min-width: 40px;
+}
+
+#all-cells {
+	width: 95%;
+}
+
+table, th, td {
+	/* border: 1px solid rgb(66, 66, 66); */
+	border-collapse: collapse;
+}
+
+#all-cells td, th {
+	/* text-align: center; */
+	padding-left: 10px;
+	border-bottom: 1px solid rgb(88, 88, 88);
+}
+
+#all-cells tr:hover {
+	background-color: var(--header-background-color);
+}
+
+.center-cell {
+	text-align: center;
+}
+
+
+
 
 .color-box {
 	width: 18px;
