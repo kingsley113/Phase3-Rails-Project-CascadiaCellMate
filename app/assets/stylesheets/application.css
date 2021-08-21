@@ -533,3 +533,29 @@ hr {
 	background-color: rgb(128, 128, 128);
 	border: none;
 }
+
+.comment {
+	display: flex;
+	justify-content: space-between;
+	/* justify-content: flex-start; */
+	/* align-items: center; */
+	padding: 5px 1%;
+	/* background-color: var(--header-background-color); */
+	/* border-bottom: 1px solid rgb(88, 88, 88); */
+
+}
+
+.comment .user {
+	min-width: 200px;
+}
+
+.comment .post-date {
+	min-width: 200px;
+	/* justify-content: flex-end; */
+}
+
+.comment .content {
+	/* justify-content: left; */
+	/* margin-left: auto; */
+	margin-right: auto;
+}

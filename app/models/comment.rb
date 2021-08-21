@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
 	validates :content, :user_id, :cell_id, presence: true
 
 def comment_time
-	self.created_at.strftime("%F")
+	self.created_at.strftime("%F %r")
 end
 
 end

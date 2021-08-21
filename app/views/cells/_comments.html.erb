@@ -6,9 +6,18 @@
 	<%if cell.comments.blank? %>
 		<div class="no-comment">No comments to display<br></div>
 	<%else%>
-		<%cell.comments.each do |comment|%>
-			<%=comment.comment_time%> <%=comment.user.display_name%> said:<br>
-			<%=comment.content%><br>
+		<%cell.comments.each_with_index do |comment, index|%>
+			<div class="comment">
+				<div class="user">
+					#<%=index +1%>:  <%=comment.user.display_name%> said:
+				</div>
+				<div class="content">
+					<%=comment.content%>
+				</div>
+				<div class="post-date right-align-text">
+					<%=comment.comment_time%>
+				</div>
+			</div>
 			<hr>
 			<br>
 		<%end%>
