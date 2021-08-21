@@ -2,14 +2,27 @@
 	<h3>Comments</h3>
 </div>
 
-<%= form_tag comment_path, class: "center-container" do %>
-	<span class="inline" id="new-task-input">
-		<%= text_field_tag :'task[name]', "", class: "input-field" %>
-	</span>
+<div class="left-container">
+	<%if cell.comments.blank? %>
+		<div class="no-comment">No comments to display<br></div>
+	<%else%>
+		<%cell.comments.each do |comment|%>
+			<%=comment.comment_time%> <%=comment.user.display_name%> said:<br>
+			<%=comment.content%><br>
+			<hr>
+			<br>
+		<%end%>
+	<%end%>
+</div>
+
+<%= form_tag comments_path, class: "center-container" do %>
+	<div class="comment-textarea">
+		<%= text_area_tag :'comment[content]', "", class: "text-area-input", placeholder: "Enter new comment here" %>
+	</div>
 	
-	<%=hidden_field_tag :'task[cell_id]', cell.id %>
-	
-	<span class="inline border-box-skinny">
-		<%= submit_tag 'Add task', class: "submit-button "%>
-	</span>
+	<%=hidden_field_tag :'comment[cell_id]', cell.id %>
+	<%=hidden_field_tag :'comment[user_id]', current_user.id %>
+	<div class="center-container border-box-skinny">
+		<%= submit_tag 'Submit', class: "submit-button "%>
+	</div>
 <% end %>

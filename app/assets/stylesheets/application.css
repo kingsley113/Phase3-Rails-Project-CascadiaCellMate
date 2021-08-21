@@ -262,6 +262,12 @@ header {
   justify-content: center;
 }
 
+.left-container {
+	display: flex;
+	justify-content: start;
+	flex-direction: column;
+}
+
 .grid-container {
 	width: var(--grid-width);
 	min-width: var(--grid-width);
@@ -469,6 +475,13 @@ input {
 	font-size: 14pt;
 }
 
+textarea {
+	border: 1px solid var(--main-accent-color);
+	border-radius: 5px;
+	background-color: var(--input-field-background-color);
+	width: 100%;
+}
+
 .error {
 	border-color: red;
 	border-width: 3px;
@@ -499,4 +512,24 @@ input {
 .float-right {
 	float: right;
 	/* margin-left: auto; */
+}
+
+.comment-textarea {
+	display: flex;
+	width: 60%;
+	height: 60px;
+}
+
+/* Comments */
+
+.no-comment {
+	height: 50px;
+	color: rgb(128, 128, 128);
+}
+
+hr {
+	height: 1px;
+	width: 100%;
+	background-color: rgb(128, 128, 128);
+	border: none;
 }
