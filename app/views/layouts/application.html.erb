@@ -29,12 +29,12 @@
 					<li><%=link_to "Home", root_path %></li> 
 					<li><%=link_to "Cell Map", map_path %></li>
 					<li><%=link_to "Cell List", cells_path %></li> 
-					<li><%=link_to "Region List", regions_path %></li> 
 					<% if current_user %>
 						<li><%=link_to "My Cells", user_cells_path(current_user) %></li> 
 					<% else %>
 						<li><%=link_to "Sign In", login_path %> </li>
 					<% end %>
+					<li><%=link_to "Region List", regions_path %></li>
 					<li><%=link_to "Quest List", quests_path %></li> 
 					
 				</ul>
