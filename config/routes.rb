@@ -6,16 +6,17 @@ Rails.application.routes.draw do
 	# Regions
 	# Comments
 	# Task
+	resources :cells, :users, :regions, :tasks, :quests, :comments
 
 	resources :users, only: [:show] do
 		resources :cells, only: [:show, :index, :new] 
 	end
 
-	resources :regions, only: [:show, :index] do
-		resources :cells, only: [:show, :index]
+	resources :regions, only: [:show] do
+		resources :cells, only: [:show, :index, :new]
 	end
 
-	resources :cells, :users, :regions, :tasks, :quests, :comments 
+	 
 
 	root 'welcome#home'
 
@@ -30,4 +31,6 @@ Rails.application.routes.draw do
 	get '/map' => 'cells#map_cell_color'
 	get '/map_user_colors' => 'cells#map_user_color'
 	get '/map_progress_colors' => 'cells#map_progress_color'
+
+	# get '/regions/new' => 'regions#new'
 end
