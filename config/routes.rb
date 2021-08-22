@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 	# Task
 
 	resources :users, only: [:show] do
-		resources :cells, only: [:show, :index] 
+		resources :cells, only: [:show, :index, :new] 
 	end
 
 	resources :regions, only: [:show, :index] do
