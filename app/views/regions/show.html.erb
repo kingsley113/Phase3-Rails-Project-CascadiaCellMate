@@ -1,6 +1,25 @@
+<div class="center-container">
+	<span class="skew-border-box" id="new-cell-button">
+	<h1 class="fallout-font skew-correction"><%=link_to "Edit Region", edit_region_path(@region)%></h1>
+	</span>
+</div>
+
+
+
+
+
+<div class="center-container">
 <h1> <%= @region.name %></h1>
+</div>
+<div class="center-container">
+<%if @region.cells.blank?%>
+	No cells currently assigned to region :(
+<%end%>
+
 <ul>
 	<%@region.cells.each do |cell|%>
 		<li class="fallout-font"><%= link_to cell.name, cell_path(cell)%></li>
 	<% end %>
 </ul>
+
+</div>
