@@ -276,6 +276,36 @@ table, th, td {
 	text-align: center;
 }
 
+#new-cell td {
+	text-align: right;
+	padding-right: 10px;
+	height: 30px;
+
+	/* border: 2px; */
+	/* border-style: solid; */
+	/* border-radius: 10px; */
+	/* border-color: var(--main-accent-color); */
+	/* padding: 8px 15px; */
+	/* transform: skew(-20deg); */
+	/* display: inline-block; */
+	/* background-color: var(--header-background-color); */
+}
+
+#new-cell {
+	width: 50%;
+	/* margin-bottom: 20px; */
+	border: 2px solid var(--main-accent-color);
+	border-radius: 10px;
+	margin: 15px;
+	background-color: var(--header-background-color);
+}
+
+
+#margin-bottom-10 {
+	margin-bottom: 10px;
+}
+
+
 
 
 
@@ -501,7 +531,7 @@ input {
 	background-color: var(--input-field-background-color);
 	/* display: inline-block; */
 	/* width: 100%; */
-	font-size: 14pt;
+	font-size: 12pt;
 }
 
 textarea {
@@ -510,7 +540,24 @@ textarea {
 	background-color: var(--input-field-background-color);
 	width: 100%;
 	font-family: "Roboto", sans-serif;
-	font-size: 14pt;
+	font-size: 12pt;
+}
+
+select {
+	border: 1px solid var(--main-accent-color);
+	border-radius: 5px;
+	background-color: var(--input-field-background-color);
+	width: 100%;
+	font-family: "Roboto", sans-serif;
+	font-size: 12pt;
+	
+	/* appearance: none; */
+}
+
+.left-align {
+	display: flex;
+	float: left;
+	/* align-content: left; */
 }
 
 .error {
