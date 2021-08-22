@@ -5,13 +5,11 @@ class RegionsController < ApplicationController
 	end
 
 	def new
-		# admin only
 		@region = Region.new
 	end
 
 	def show
-		# set_region
-		@region = Region.find_by_slug(params[:id])
+		set_region
 	end
 
 	def create
@@ -52,7 +50,8 @@ class RegionsController < ApplicationController
 	private 
 
 	def set_region
-		@region = Region.find(params[:id])
+		# @region = Region.find(params[:id])
+		@region = Region.find_by_slug(params[:id])
 	end
 
 	def region_params
