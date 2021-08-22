@@ -1,11 +1,20 @@
-this is the regions list page :)
 
-<%= link_to "Create New Region", new_region_path %><br>
+<div class="center-container">
+	<h1>All Regions:</h1>
+</div>
 
-<h1>All Regions:</h1>
+<div class="center-container" id="margin-bottom-10">
+	<span class="skew-border-box" id="new-cell-button">
+	<h1 class="fallout-font skew-correction"><%= link_to "Create New Region", new_region_path %></h1>
+	</span>
+</div>
 
-<ul>
-<% @regions.each do |region| %>
-	<li><%= link_to region.name, region_path(region), class: "fallout-font" %><br>
-	Total cells: <%= region.cells.count%></li>
-<% end %>
+<div class="center-container">
+	<div class="center-container border-box">
+		<ul class="clean">
+		<% @regions.each do |region| %>
+			<li><h3><%= link_to region.name, region_path(region), class: "fallout-font" %></h3>
+			<span>Total cells: <%= region.cells.count%></span></li>
+		<% end %>
+	</div>
+</div>
