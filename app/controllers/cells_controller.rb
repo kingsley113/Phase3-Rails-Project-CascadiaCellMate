@@ -34,16 +34,11 @@ class CellsController < ApplicationController
 	end
 
 	def show
-		# set_cell
-		# binding.pry
-		@cell = Cell.find_by_slug([params[:id]])
+		set_cell
 	end
 
 	def create
-		
 			@cell = Cell.new(cell_params)
-		# binding.pry
-		# if @cell.valid_coordinates?
 			if @cell.save!
 				@cell.create_default_tasks
 				redirect_to cell_path(@cell)
@@ -51,10 +46,6 @@ class CellsController < ApplicationController
 				# TODO: alert: "Please fill out all required fields."
 				render 'new'
 			end
-		# else
-		# 	# TODO: Alert for duplicate cells
-		# 	render'new'
-		# end
 	end
 
 	def edit

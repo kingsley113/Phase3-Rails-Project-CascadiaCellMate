@@ -31,7 +31,6 @@ class Cell < ApplicationRecord
 	end
 
 	def open_tasks
-		# binding.pry
 		self.tasks.select{ |task| task.complete == false}.count
 	end
 
@@ -64,19 +63,14 @@ class Cell < ApplicationRecord
 	end
 
 	def set_adjusted_coordinates
-		# self.coordinate_x = self.ck_coordinate_x + 35  #old
-		# self.coordinate_y = self.ck_coordinate_y + 50  #old
 		# Set X grid coordinate
 		self.coordinate_x = self.ck_coordinate_x + 33
 		# Set Y grid coordinate 
-		self.coordinate_y = 78 - (self.ck_coordinate_y + 45) #+ (77 - self.ck_coordinate_y)
-		  # Top cell 32, bottom cell -44 = 77 total height
-
+		self.coordinate_y = 78 - (self.ck_coordinate_y + 45) 
+		# Top cell 32, bottom cell -44 = 77 total height
 	end
 
 	def self.search(query)
 		where("name like ?", "%#{query}%")
 	end
-
-	
 end
