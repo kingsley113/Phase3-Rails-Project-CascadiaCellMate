@@ -1,7 +1,37 @@
 home page :)
 
-<ul>
-	<% @recent_cells.each do |cell|%>
-		<li><%=cell.name%></li>
-	<%end%>
-</ul>
+
+
+
+
+
+
+<div class="center-container">
+	<div class="cell-grid-container">
+		<div class="border-box" id="pie-chart-container">	
+			<%=render partial: "pie_chart", locals: {cells: @cells} %>
+		</div>
+
+		<div class="border-box" id="map-container">	
+			<%=link_to "View the map!", map_path %>
+		</div>
+
+		<div class="border-box" id="recent-cells-container">
+			<%=render partial: "recent_cells", locals: {cells: @recent_cells} %> 
+		</div>
+
+		<div class="border-box" id="new-cell-container">	
+			<%=link_to "Create New Cell", new_cell_path %>
+		</div>
+
+		<div class="border-box" id="regions-container">	
+			<%=link_to "View All Regions", regions_path %>
+		</div>
+
+		<div class="border-box" id="all-quests-container">	
+			<%=link_to "View all Quests", quests_path %>
+		</div>
+
+		
+	</div>
+</div>

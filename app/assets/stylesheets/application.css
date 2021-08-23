@@ -703,3 +703,35 @@ hr {
 	width: 20px;
 	padding-right: 10px;
 }
+
+/* Home Page styles */
+
+#pie-chart-container {
+	grid-column-start: 1;
+	grid-row-start: 1;
+}
+
+#map-container {
+	grid-column-start: 2;
+	grid-row-start: 1;
+}
+
+#recent-cells-container {
+	grid-column-start: 3;
+	grid-row-start: 1;
+}
+
+#new-cell-container {
+	grid-column-start: 1;
+	grid-row-start: 2;
+}
+
+#regions-container {
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
+
+#all-quests-container {
+	grid-column-start: 3;
+	grid-row-start: 2;
+}
