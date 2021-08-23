@@ -1,23 +1,59 @@
 class QuestsController < ApplicationController
 
 	def index
+		@quests = Quest.all_by_title
 	end
 
 	def new
+		@quest = Quest.new
 	end
 
 	def show
-		@quest = Quest.find_by_slug(params[:id])
+		set_quest
 	end
+
+	def create
+		@quest = Quest.new(quest_params)
+
+		if @quest.save!
+			redirect_to quest_path(@quest)
+		else
+			# TODO: error message
+			render 'new'
+		end
+	end
+
+
 
 	def edit
+		set_quest
 	end
 
-	def update 
+	def update
+		set_quest
+
+		@quest.update(quest_params)
+
+		if @quest.save!
+			redirect_to quest_path(@quest)
+		else
+			# TODO: error message
+			render 'edit'
+		end
 	end
 
 	def destroy
 		# admin only?
+		# TODO:
 	end
 
+	private
+
+	def set_quest
+		@quest = Quest.find_by_slug(params[:id])
+	end
+
+	def quest_params
+		params.require(:quest).permit(:title, :summary, :details, :wiki_link, :category, cell_ids: [])
+	end
 end

@@ -295,6 +295,64 @@ table, th, td {
 	margin-bottom: 10px;
 }
 
+#margin-top-10 {
+	margin-top: 10px;
+}
+
+#new-quest {
+	width: 70vw;
+	/* border: 2px solid var(--main-accent-color); */
+	/* border-radius: 10px; */
+	margin: 0px;
+	background-color: var(--header-background-color);
+	padding: 20px;
+}
+
+#new-quest textarea {
+	border: 1px solid var(--main-accent-color);
+	border-radius: 5px;
+	background-color: var(--input-field-background-color);
+	width: 100%;
+	font-family: "Roboto", sans-serif;
+	font-size: 12pt;
+	height: 200px;
+}
+
+#quest-link-cells th {
+	text-align: left;
+}
+
+#quest-link-cells {
+	width: 100%;
+}
+
+/* #quest-show {
+	width: 100%;
+} */
+
+#quest-show {
+	width: 70vw;
+	/* border: 2px solid var(--main-accent-color); */
+	/* border-radius: 10px; */
+	margin: 0px;
+	background-color: var(--header-background-color);
+	padding: 20px;
+	/* text-; */
+	/* border-bottom: 1px solid white; */
+}
+
+#quest-show tr {
+	border-bottom: 1px solid rgb(88, 88, 88);
+}
+
+#details {
+	height: 100px;
+	vertical-align: text-top;
+}
+
+#quest-index {
+	min-width: 40vw;
+}
 
 .color-box {
 	width: 18px;
@@ -475,6 +533,16 @@ table, th, td {
 .cell-col-1 {
 	width: 40%;
 	/* text-justify: end; */
+}
+
+#new-quest .cell-col-1 {
+	width: 20%;
+	min-width: 125px;
+}
+
+#quest-show .cell-col-1 {
+	width: 20%;
+	min-width: 125px;
 }
 
 .task-col-2 {

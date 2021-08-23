@@ -1,1 +1,19 @@
 this is the index of all quests! :D
+<div class="center-container">
+	<span class="skew-border-box" id="new-cell-button">
+		<h1 class="fallout-font skew-correction"><%=link_to "Create New Quest", new_quest_path %></h1>
+	</span>
+</div>
+
+<div class="center-container">
+ 	<h1>All Quests:</h1>
+</div>
+
+<div class="center-container">
+	<div class="center-container border-box" id="quest-index">
+		<ul class="clean">
+		<% @quests.each do |quest| %>
+			<li><h3><%= link_to quest.title, quest_path(quest), class: "fallout-font" %></h3></li>
+		<% end %>
+	</div>
+</div>

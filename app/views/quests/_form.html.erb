@@ -1,0 +1,57 @@
+
+
+<div class="center-container">
+	<%=form_for quest do |f|%>
+	<div class="border-box">
+		<table  id="new-quest">
+				<colgroup>
+					<col span="1" class="cell-col-1">
+					<col span="1">
+				</colgroup>
+
+					<tr>
+						<td>Title:</td> <td><%=f.text_field :title, class: "input-field" %></td>
+					</tr>
+					<tr>
+						<td>Summary</td> <td><%=f.text_field :summary, class:"input-field" %></td>
+					<tr>
+					<td>Details: </td> <td><%=f.text_area :details %></td>
+					</tr>
+					<tr>
+					<td>Category: </td> <td><%=f.select :category, ["Main Storyline", "Side Quest", "Fetch Quest", "Other"] %></td>
+					</tr>
+					<tr>
+					<td>Quest Wiki Link: </td> <td><%=f.text_field :wiki_link, class: "input-field" %></td>
+					</tr>
+				
+				
+		</table>
+		
+		
+		<div class="center-container">
+			<h1>Add Cells to Quest</h1>
+		</div>
+		
+		<table class="no-border " id="quest-link-cells">
+			<tr>
+				<th></th>
+				<th>Cell Name</th>
+				<th>Region </th>
+			</tr>
+			<%=f.collection_check_boxes :cell_ids, Cell.all_by_name, :id, :name do |b| %>
+					<tr>
+						<td><%=b.check_box%></td>
+						<td><%= b.label {b.object.name} %> </td>
+						<td><%=b.object.region.name%></td>
+					</tr>
+			<% end %>
+		</table>
+	</div>
+	
+	<div class="center-container" id="margin-top-10">
+		<%=f.submit button_text, class: "submit-button" %>
+		</div>
+
+
+	<%end%>
+</div>

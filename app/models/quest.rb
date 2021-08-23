@@ -4,8 +4,8 @@ class Quest < ApplicationRecord
 	has_many :cells, through: :cell_quests 
 
 	# Validations
-	validates :name, presence: true
-	validates :name, :slug, uniqueness: true
+	validates :title, presence: true
+	validates :title, :slug, uniqueness: true
 
 	# Callbacks
 	after_validation :set_slug, only: [:create, :update]
@@ -14,10 +14,22 @@ class Quest < ApplicationRecord
 		self.slug
 	end
 
+	# def cell_ids=(ids)
+	# 	ids.each do |id|
+	# 		cell = Cell.find(id)
+	# 		self.cells << cell
+	# 	end
+	# end
+
+	def self.all_by_title
+		@quests = Quest.all.sort_by{ |quest| quest.title}
+	end
+
+
 	private
 
 	def set_slug
-		self.slug = self.name.parameterize
+		self.slug = self.title.parameterize
 	end
 
 end

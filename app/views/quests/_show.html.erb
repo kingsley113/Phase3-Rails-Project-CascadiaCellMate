@@ -1,0 +1,44 @@
+<div class="center-container">
+	<h1><%=quest.title%></h1>
+</div>
+
+<div class="center-container">
+	<div class="border-box">
+		<table  id="quest-show">
+			<colgroup>
+				<col span="1" class="cell-col-1">
+				<col span="1">
+			</colgroup>
+
+			<tr>
+				<td class="right-align-text"><b>Title: &nbsp;</b></td> <td><%=quest.title %></td>
+			</tr>
+			<tr>
+				<td class="right-align-text"><b>Summary: &nbsp;</b></td> <td><%=quest.summary %></td>
+			<tr id="details">
+			<td class="right-align-text"><b>Details: &nbsp;</b></td> <td><%=quest.details %></td>
+			</tr>
+			<tr>
+			<td class="right-align-text"><b>Category: &nbsp;</b></td> <td><%=quest.category %></td>
+			</tr>
+			<tr>
+			<td class="right-align-text"><b>Quest Wiki Link: &nbsp;</b></td> <td><%=link_to quest.wiki_link, quest.wiki_link %></td>
+			</tr>
+		</table>
+
+		<div class="center-container">
+			<h2>Linked Cells</h2>
+		</div>
+
+		<div class="center-container">
+			<%=render partial: "cells/index", locals: {cells: quest.cells}%>
+		</div>
+
+
+
+	</div>
+</div>
+
+<div class="center-container" id="margin-top-10">
+	<%=link_to "Edit Quest", edit_quest_path(quest), class: "submit-button"%>
+</div>
