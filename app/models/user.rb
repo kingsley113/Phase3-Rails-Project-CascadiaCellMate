@@ -20,15 +20,31 @@ class User < ApplicationRecord
 
 	def set_recent_cell(cell)
 		# get array of recent visits
-		visits = current_user.recent_cells.split[0]
+		visits = self.recent_cells
 		# add cell id to array of recents
-		visits.unshift(cell.id)
-		# if array is greater than x in length, delete the last entry
-		if visits.length > 6
-			visits.pop
+		if visits
+			visits = visits.split(",")
+			if visits.include?(cell.id.to_s)
+				visits.delete(cell.id.to_s)
+				visits.unshift(cell.id)
+			else
+				visits.unshift(cell.id)
+				# if array is greater than x in length, delete the last entry
+				if visits.length > 6
+					visits.pop
+				end
+			end
+			if visits.length > 1
+				self.recent_cells = visits.join(",")
+			end
+		else
+			self.recent_cells = cell.id	
 		end
-		current_user.recent_cells = visits
-		current_user.save
+		self.save
+	end
+
+	def get_recent_cells
+		Cell.find(self.recent_cells.split(","))
 	end
 
 	private

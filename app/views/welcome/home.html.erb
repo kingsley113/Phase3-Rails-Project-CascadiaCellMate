@@ -1,1 +1,7 @@
 home page :)
+
+<ul>
+	<% @recent_cells.each do |cell|%>
+		<li><%=cell.name%></li>
+	<%end%>
+</ul>
