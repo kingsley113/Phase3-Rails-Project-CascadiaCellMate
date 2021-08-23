@@ -16,6 +16,8 @@ class Cell < ApplicationRecord
 	# Validations
 	validates :name, :ck_coordinate_x, :ck_coordinate_y, :region_id, presence: true
 	validates :slug, uniqueness: true
+	validates :ck_coordinate_x, inclusion: -32..58 
+	validates :ck_coordinate_y, inclusion: -44..32
 	# validates_with CoordinateValidator, on: :update
 
 	# callbacks
@@ -44,17 +46,17 @@ class Cell < ApplicationRecord
 		end
 	end
 
-	def valid_coordinates?
-		# check if combo of xy coordinates does not already exist
-		# find cells with x coordinates
-		# binding.pry
-		cells = Cell.where(coordinate_x: self.ck_coordinate_x).where(coordinate_y: self.ck_coordinate_y)
-		if cells.count > 1
-			false
-		else
-			true
-		end
-	end
+	# def valid_coordinates?
+	# 	# check if combo of xy coordinates does not already exist
+	# 	# find cells with x coordinates
+	# 	# binding.pry
+	# 	cells = Cell.where(coordinate_x: self.ck_coordinate_x).where(coordinate_y: self.ck_coordinate_y)
+	# 	if cells.count > 1
+	# 		false
+	# 	else
+	# 		true
+	# 	end
+	# end
 
 	private
 
@@ -72,5 +74,9 @@ class Cell < ApplicationRecord
 
 	def self.search(query)
 		where("name like ?", "%#{query}%")
+	end
+
+	def self.all_by_name
+		@cells = Cell.all.sort_by{ |cell| cell.name}
 	end
 end
