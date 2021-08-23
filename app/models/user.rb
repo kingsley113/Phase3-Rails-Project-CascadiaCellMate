@@ -18,6 +18,19 @@ class User < ApplicationRecord
 		self.slug
 	end
 
+	def set_recent_cell(cell)
+		# get array of recent visits
+		visits = current_user.recent_cells.split[0]
+		# add cell id to array of recents
+		visits.unshift(cell.id)
+		# if array is greater than x in length, delete the last entry
+		if visits.length > 6
+			visits.pop
+		end
+		current_user.recent_cells = visits
+		current_user.save
+	end
+
 	private
 
 	def set_default_display_name

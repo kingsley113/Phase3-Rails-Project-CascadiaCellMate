@@ -35,6 +35,7 @@ class CellsController < ApplicationController
 
 	def show
 		set_cell
+		current_user.set_recent_cell(@cell)
 	end
 
 	def create

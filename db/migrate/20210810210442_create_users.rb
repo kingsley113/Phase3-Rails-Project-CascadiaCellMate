@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :discord_id
 			t.string :accent_color
 			t.string :slug
+			t.text :recent_cells
 
       t.timestamps
     end
