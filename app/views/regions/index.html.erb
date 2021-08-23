@@ -13,7 +13,7 @@
 	<div class="center-container border-box">
 		<ul class="clean">
 		<% @regions.each do |region| %>
-			<li><h3><%= link_to region.name, region_path(region), class: "fallout-font" %></h3>
+			<li><h2><%= link_to region.name, region_path(region), class: "fallout-font" %></h2>
 			<span>Total cells: <%= region.cells.count%></span></li>
 		<% end %>
 	</div>

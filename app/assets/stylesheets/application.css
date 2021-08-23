@@ -20,6 +20,7 @@
 	--grid-height: 1015px;
 	--header-background-color: rgb(53, 53, 53);
 	--input-field-background-color: rgb(185, 185, 185);
+	--background-color: rgb(27, 27, 27);
 }
 
 /* Fonts */
@@ -40,7 +41,7 @@
 		font-size: 12pt;
 		margin: 0;
 		/* padding: 10px; */
-		background-color: rgb(27, 27, 27);
+		background-color: var(--background-color);
 		color: white;
 	}
 
@@ -734,4 +735,49 @@ hr {
 #all-quests-container {
 	grid-column-start: 3;
 	grid-row-start: 2;
+	
+	
+}
+
+.super-header {
+	font-size: 36pt;
+}
+
+.index-grid-container {
+	width: 90vw;
+	/* height: auto; */
+	min-height: 100px;
+	display: grid;
+	grid-template: 1fr 1fr / 1fr 1fr 1fr;
+	gap: 10px;
+}
+
+#index-map {
+	width: 100%;
+	/* z-index: 0; */
+	/* overflow: hidden; */
+	background-position: center;
+}
+
+.tile-button {
+	background-color: rgba(0, 0, 0, 0);
+  /* border: none; */
+  color: var(--main-accent-color);
+  /* padding: 15px 32px; */
+  text-align: center;
+  /* text-decoration: none; */
+  display: inline-block;
+  font-size: 20px;
+	transition: .2s;
+}
+
+.tile-button:hover {
+	background-color: var(--main-accent-color);
+  /* border: none; */
+  color: var(--background-color);
+  /* padding: 15px 32px; */
+  /* text-align: center; */
+  /* text-decoration: none; */
+  /* display: inline-block; */
+  font-size: 20px;
 }

@@ -1,36 +1,45 @@
 home page :)
-
-
-
-
-
-
+<div class="center-container">
+	<span class="super-header fallout-font">Welcome to the Fallout Cascadia Cell Mate, <%=current_user.display_name%>!</span>
+</div>
 
 <div class="center-container">
-	<div class="cell-grid-container">
+	<div class="index-grid-container">
 		<div class="border-box" id="pie-chart-container">	
 			<%=render partial: "pie_chart", locals: {cells: @cells} %>
 		</div>
 
-		<div class="border-box" id="map-container">	
-			<%=link_to "View the map!", map_path %>
-		</div>
+
+		<%=link_to map_path do %>
+			<div class="border-box tile-button" id="map-container">	
+				<div class="super-header fallout-font center-container" >"View the map!"</div>
+				<div class="center-container"><%= image_tag "AshTestMap2.png", id: "index-map"%></div>
+			</div>				
+		<%end%>
+		
 
 		<div class="border-box" id="recent-cells-container">
 			<%=render partial: "recent_cells", locals: {cells: @recent_cells} %> 
 		</div>
 
-		<div class="border-box" id="new-cell-container">	
-			<%=link_to "Create New Cell", new_cell_path %>
-		</div>
+		<%=link_to new_cell_path do %>
+			<div class="border-box tile-button" id="new-cell-container">	
+				<span class="super-header fallout-font">Create New Cell</span>
+			</div>
+		<%end%>
 
-		<div class="border-box" id="regions-container">	
-			<%=link_to "View All Regions", regions_path %>
-		</div>
+		<%=link_to regions_path do %>
+			<div class="border-box tile-button" id="regions-container">
+				<span class="super-header fallout-font">View All Regions</span>
+			</div>
+		<%end%>
 
-		<div class="border-box" id="all-quests-container">	
-			<%=link_to "View all Quests", quests_path %>
-		</div>
+			
+		<%=link_to quests_path do %>
+			<div class="border-box tile-button" id="all-quests-container">	
+				<div class="super-header fallout-font center-container" >View All Quests</div>
+			</div>
+		<%end%>
 
 		
 	</div>
