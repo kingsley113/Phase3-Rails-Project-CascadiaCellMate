@@ -1,0 +1,31 @@
+new user signup page, link to manual signup and discord login
+
+<div class="center-container">
+	<h1>Sign up to see the magic</h1>
+</div>
+
+<div class="center-container">
+	<div class="center-container">
+		<%= form_for @user do |f| %>
+			<div class="center-container border-box">
+				<table class="no-border " id="login-form">
+							<colgroup>
+								<col span="1" class="cell-col-1">
+								<col span="1">
+							</colgroup>
+							<tr><td>Access Code: </td> <td><%= f.text_field :access_code %> </td></tr>
+							<tr><td>Username: </td> <td><%= f.text_field :username %> </td></tr>
+							<tr><td>Display Name: </td> <td><%= f.text_field :display_name %> </td></tr>
+							<tr><td>Favorite Color: </td> <td><%=f.color_field :accent_color %></td></tr>
+							<tr><td>Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
+				</table>
+			</div>
+
+			<div class="center-container">
+				<span class="border-box-skinny" id="margin-top-10">
+					<%= f.submit 'Sign In', class: "submit-button" %>
+				</span>
+			</div>
+		<% end %>
+	</div>
+</div>

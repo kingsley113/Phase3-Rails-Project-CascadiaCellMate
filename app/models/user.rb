@@ -9,11 +9,16 @@ class User < ApplicationRecord
 	# Validations
 	validates :username, :password, presence: true, on: :create
 	validates :username, :slug, uniqueness: true
+	validates :access_code, comparison: {equal_to: "doeshesmelllikegluten", message: 'Incorrect access code'}
 	
 	# callbacks
 	before_create :set_default_display_name
 	after_validation :set_slug, only: [:create, :update]
+
+	# virtual attributes
+	attr_accessor :access_code
 	
+	# instance methods
 	def to_param
 		self.slug
 	end
