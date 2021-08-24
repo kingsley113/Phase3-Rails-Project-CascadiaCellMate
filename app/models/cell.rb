@@ -16,8 +16,10 @@ class Cell < ApplicationRecord
 	# Validations
 	validates :name, :ck_coordinate_x, :ck_coordinate_y, :region_id, presence: true
 	validates :slug, uniqueness: true
-	validates :ck_coordinate_x, inclusion: -32..58 
-	validates :ck_coordinate_y, inclusion: -44..32
+	validates :ck_coordinate_x, inclusion: {in: -32..58, message: 'must be between -32 and 58.'} 
+	validates :ck_coordinate_y, inclusion: {in: -44..32, message: 'must be between -44 and 32.'}
+
+
 	# validates_with CoordinateValidator, on: :update
 
 	# callbacks

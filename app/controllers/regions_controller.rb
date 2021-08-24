@@ -18,7 +18,6 @@ class RegionsController < ApplicationController
 		if @region.save
 			redirect_to region_path(@region)
 		else
-			# TODO: alert text message
 			render 'new'
 		end
 	end
@@ -36,7 +35,6 @@ class RegionsController < ApplicationController
 		if @region.save
 			redirect_to region_path(@region)
 		else
-			# TODO: alert text message
 			render 'edit'
 		end
 	end

@@ -33,7 +33,6 @@ class UsersController < ApplicationController
 		@user.update(user_params)
 
 		if @user.save!
-			# set the accent color variable here??
 			redirect_to user_path(@user)
 		else
 			# TODO: add flash error message

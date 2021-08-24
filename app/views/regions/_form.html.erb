@@ -1,11 +1,17 @@
 <div style="center-container">
-	<%=form_for region do |f|%>
-		<%=f.text_field :name, placeholder: "Name", class: "input-field", id: "region-field" %>
-
-	<div class="center-container">
-		<span class="border-box-skinny">
-			<%=f.submit button_text, class: "submit-button"%>
-		</span>
+	<div style="center-container">
+		<%= render partial: "application/error", locals: {object: region} %>
 	</div>
-	<%end%>
+
+	<div style="center-container">
+		<%=form_for region do |f|%>
+			<%=f.text_field :name, placeholder: "Name", class: "input-field", id: "region-field" %>
+
+		<div class="center-container" id="margin-top-10">
+			<span class="border-box-skinny">
+				<%=f.submit button_text, class: "submit-button"%>
+			</span>
+		</div>
+		<%end%>
+	</div>
 </div>

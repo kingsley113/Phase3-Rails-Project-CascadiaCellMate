@@ -39,11 +39,10 @@ class CellsController < ApplicationController
 
 	def create
 			@cell = Cell.new(cell_params)
-			if @cell.save!
+			if @cell.save
 				@cell.create_default_tasks
 				redirect_to cell_path(@cell)
 			else
-				# TODO: alert: "Please fill out all required fields."
 				render 'new'
 			end
 	end
@@ -55,10 +54,9 @@ class CellsController < ApplicationController
 	def update 
 		set_cell
 		@cell.update(cell_params)
-		if @cell.save!
+		if @cell.save
 			redirect_to cell_path(@cell)
 		else
-			# TODO: Add alert message here
 			render 'edit'
 		end
 	end
@@ -74,7 +72,11 @@ class CellsController < ApplicationController
 	end
 
 	def set_cell
-		@cell = Cell.find_by_slug([params[:id]])
+		if params[:id].to_i == 0
+			@cell = Cell.find_by_slug([params[:id]])
+		else
+			@cell = Cell.find(params[:id])
+		end
 	end
 
 	def all_cells

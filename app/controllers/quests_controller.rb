@@ -15,10 +15,9 @@ class QuestsController < ApplicationController
 	def create
 		@quest = Quest.new(quest_params)
 
-		if @quest.save!
+		if @quest.save
 			redirect_to quest_path(@quest)
 		else
-			# TODO: error message
 			render 'new'
 		end
 	end
@@ -34,10 +33,9 @@ class QuestsController < ApplicationController
 
 		@quest.update(quest_params)
 
-		if @quest.save!
+		if @quest.save
 			redirect_to quest_path(@quest)
 		else
-			# TODO: error message
 			render 'edit'
 		end
 	end

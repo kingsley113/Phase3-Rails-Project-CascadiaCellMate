@@ -10,10 +10,9 @@ class CommentsController < ApplicationController
 	def create
 		comment = Comment.new(comment_params)
 
-		if comment.save!
+		if comment.save
 			redirect_to cell_path(comment.cell)
 		else
-			# TODO: add error message
 			redirect_to cell_path(params[:comment][:cell_id])
 		end
 	end
