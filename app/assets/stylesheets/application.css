@@ -838,3 +838,9 @@ hr {
 #login-form {
 	text-align: right;
 }
+
+
+/* User */
+.user-info-table {
+	width: 100%;
+}

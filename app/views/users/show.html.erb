@@ -1,15 +1,25 @@
-user show page!<br>
-<span class="skew-border-box"> <h1 class="skew-correction fallout-font"><%=@user.display_name%></h1></span>
-<br>
-<ul class="clean">
-	<li>Username: <%=@user.username%> </li>
-	<li>Current Password: Wouldn't you like to know... </li>
-	<li>Site Accent Color: <span class="color-box"> </span></li>
-</ul>
-<%= link_to "Edit User Details", edit_user_path(@user)%>
+<div class="center-container">
+	<h1><%= @user.username %>'s User Info</h1>
+</div>
 
+<div class="center-container">
+	<div class="center-container border-box">
+		<table class="no-border user-info-table" id="user-info">
+			<colgroup>
+				<col span="1"  id="cell-col-1">
+				<col span="1">
+			</colgroup>
 
+			<tr> <td class="right-align-text tr-height"><b>Username: &nbsp;</b></td> <td><%= @user.username %></td>	</tr>
+			<tr> <td class="right-align-text tr-height"><b>Display Name: &nbsp;</b></td> <td><%= @user.display_name %></td>	</tr>
+			<tr> <td class="right-align-text tr-height"><b>Current Password: &nbsp;</b> </td> <td>Wouldn't you like to know...</td>	</tr>
+			<tr> <td class="right-align-text tr-height"><b>Site Accent Color:&nbsp;</b> </td> <td><span class="color-box"> </span></td>	</tr>
+		</table>
+	</div>
+</div>
 
-
-
-
+<div class="center-container">
+	<span class="border-box-skinny" id="margin-top-10">
+		<%= link_to "Edit User Details", edit_user_path(@user), class: "submit-button"%>
+	</span>
+</div>

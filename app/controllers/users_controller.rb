@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.create(params[:id])
+		@user = User.new(user_params)
 
 		if @user.save
 			session[:user_id] = @user.id
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:username, :password, :display_name, :discord_id, :accent_color)
+		params.require(:user).permit(:username, :password, :display_name, :discord_id, :accent_color, :access_code)
 	end
 
 	def set_user

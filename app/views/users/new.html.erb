@@ -1,4 +1,5 @@
-new user signup page, link to manual signup and discord login
+TODO: discord login
+<%= render partial: "application/error", locals: {object: @user} %>
 
 <div class="center-container">
 	<h1>Sign up to see the magic</h1>
@@ -16,14 +17,14 @@ new user signup page, link to manual signup and discord login
 							<tr><td>Access Code: </td> <td><%= f.text_field :access_code %> </td></tr>
 							<tr><td>Username: </td> <td><%= f.text_field :username %> </td></tr>
 							<tr><td>Display Name: </td> <td><%= f.text_field :display_name %> </td></tr>
-							<tr><td>Favorite Color: </td> <td><%=f.color_field :accent_color %></td></tr>
+							<tr><td>Favorite Color: </td> <td><%=f.color_field :accent_color, class: "input-field" %></td></tr>
 							<tr><td>Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
 				</table>
 			</div>
 
 			<div class="center-container">
 				<span class="border-box-skinny" id="margin-top-10">
-					<%= f.submit 'Sign In', class: "submit-button" %>
+					<%= f.submit 'Create Account', class: "submit-button" %>
 				</span>
 			</div>
 		<% end %>

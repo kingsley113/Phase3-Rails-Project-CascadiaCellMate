@@ -9,7 +9,7 @@ class User < ApplicationRecord
 	# Validations
 	validates :username, :password, presence: true, on: :create
 	validates :username, :slug, uniqueness: true
-	validates :access_code, comparison: {equal_to: "doeshesmelllikegluten", message: 'Incorrect access code'}
+	validates :access_code, inclusion: {in: %w(doeshesmelllikegluten), message: 'is incorrect'}, on: :create
 	
 	# callbacks
 	before_create :set_default_display_name
@@ -22,6 +22,10 @@ class User < ApplicationRecord
 	def to_param
 		self.slug
 	end
+
+	# def self.access_code
+	# 	"doeshesmelllikegluten"
+	# end
 
 	def set_recent_cell(cell)
 		# get array of recent visits

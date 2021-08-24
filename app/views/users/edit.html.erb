@@ -1,8 +1,27 @@
-Edit <%=@user.username%>'s Details: <br>
+<div class="center-container">
+	<h1>Edit <%=@user.username%>'s Details:</h1>
+</div>
 
-<%=form_for @user do |f|%>
-	Display Name: <%=f.text_field :display_name%><br>
-	Accent Color: <%=f.color_field :accent_color %><br>
-	<br>
-	<%= f.submit "Save Changes", class: "submit-button" %>
-<% end %>	
+<div class="center-container">
+	<div class="center-container">
+		<%= form_for @user do |f| %>
+			<div class="center-container border-box">
+				<table class="no-border " id="login-form">
+							<colgroup>
+								<col span="1" class="cell-col-1">
+								<col span="1">
+							</colgroup>
+							<tr><td>Display Name: </td> <td><%= f.text_field :display_name %> </td></tr>
+							<tr><td>Accent Color: </td> <td><%=f.color_field :accent_color, class: "input-field" %></td></tr>
+							<tr><td>Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
+				</table>
+			</div>
+
+			<div class="center-container">
+				<span class="border-box-skinny" id="margin-top-10">
+					<%= f.submit 'Update User Info', class: "submit-button" %>
+				</span>
+			</div>
+		<% end %>
+	</div>
+</div>
