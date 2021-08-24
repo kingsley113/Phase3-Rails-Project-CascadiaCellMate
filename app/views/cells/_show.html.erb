@@ -9,17 +9,19 @@
 	</colgroup>
 
 	<tr> <td class="right-align-text tr-height"><b>Description: &nbsp;</b></td> <td><%= cell.description %></td>	</tr>
+	<tr> <td class="right-align-text tr-height"><b>Region:&nbsp;</b> </td> <td><%= cell.region.name %></td>	</tr>
+	<tr> <td class="right-align-text tr-height"><b>% Complete:&nbsp;</b> </td> <td><%= cell.percent_complete %></td>	</tr>
 <tr> <td class="right-align-text tr-height"><b>Priority: &nbsp;</b></td> <td><%= cell.priority %></td>	</tr>
 <tr> <td class="right-align-text tr-height"><b>Coordinates: &nbsp;</b> </td> <td><b>X:</b> <%= cell.ck_coordinate_x %> <b>Y:</b><%= cell.ck_coordinate_y %></td>	</tr>
 
-<tr> <td class="right-align-text tr-height"><b>User:&nbsp;</b></td> <td> 
+<tr> <td class="right-align-text tr-height"><b>Assigned User:&nbsp;</b></td> <td> 
 <% if cell.user%> 
 	<%= cell.user.display_name %> 
 <% else %> 
 	--- 
 <% end %> </td>	</tr>
-<tr> <td class="right-align-text tr-height"><b>Region:&nbsp;</b> </td> <td><%= cell.region.name %></td>	</tr>
-<tr> <td class="right-align-text tr-height"><b>% Complete:&nbsp;</b> </td> <td><%= cell.percent_complete %></td>	</tr>
+
+
 <tr> <td class="right-align-text tr-height"><b>Color: &nbsp;</b> </td> <td> &nbsp;<span style="background-color:<%=cell.color%>;padding-left:60px"></span></td>	</tr>
 </table>
 

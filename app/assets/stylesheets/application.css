@@ -542,7 +542,7 @@ table, th, td {
 }
 
 .cell-info-table {
-	width: 50%;
+	width: 100%;
 }
 
 .cell-col-1 {
@@ -824,4 +824,17 @@ hr {
 
 #error-explanation {
 	color: red;
+}
+
+#alert-message {
+	color: red;
+}
+
+#notice-message {
+	color: green;
+}
+
+/* Login */
+#login-form {
+	text-align: right;
 }
