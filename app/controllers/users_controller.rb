@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.create(params[:id])
 
-		if @user.save!
+		if @user.save
 			session[:user_id] = @user.id
 			redirect_to user_path(@user)
 		else
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
 		@user.update(user_params)
 
-		if @user.save!
+		if @user.save
 			redirect_to user_path(@user)
 		else
 			# TODO: add flash error message
