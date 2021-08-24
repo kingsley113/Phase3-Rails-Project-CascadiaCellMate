@@ -2,6 +2,7 @@ class User < ApplicationRecord
 	# Relationships
 	has_many :cells
 	has_many :comments
+	has_many :cells, through: :comments
 
 	# Enable Bcrypt password
 	has_secure_password
