@@ -1,3 +1,5 @@
+<%= render partial: "application/error", locals: {object: @user} %>
+
 <div class="center-container">
 	<h1>Edit <%=@user.username%>'s Details:</h1>
 </div>
@@ -12,8 +14,8 @@
 								<col span="1">
 							</colgroup>
 							<tr><td>Display Name: </td> <td><%= f.text_field :display_name %> </td></tr>
-							<tr><td>Accent Color: </td> <td><%=f.color_field :accent_color, class: "input-field" %></td></tr>
-							<tr><td>Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
+							<tr><td>Profile Color: </td> <td><%=f.color_field :accent_color, class: "input-field" %></td></tr>
+							<tr><td>New Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
 				</table>
 			</div>
 

@@ -3,9 +3,13 @@
 </div>
 
 <div class="center-container">
-	<ul class="clean">
-		<% @recent_cells.each do |cell|%>
-			<li class="tr-height"><h3><%=link_to cell.name, cell_path(cell)%></h3></li>
-		<%end%>
-	</ul>
+	<% if @recent_cells %>
+		<ul class="clean">
+			<% @recent_cells.each do |cell|%>
+				<li class="tr-height"><h3><%=link_to cell.name, cell_path(cell)%></h3></li>
+			<%end%>
+		</ul>
+	<% else %>
+		No recent cells to display
+	<% end %>
 </div>

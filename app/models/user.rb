@@ -7,7 +7,7 @@ class User < ApplicationRecord
 	has_secure_password
 
 	# Validations
-	validates :username, :password, presence: true, on: :create
+	validates :username, :password, presence: true
 	validates :username, :slug, uniqueness: true
 	validates :access_code, inclusion: {in: %w(doeshesmelllikegluten), message: 'is incorrect'}, on: :create
 	
