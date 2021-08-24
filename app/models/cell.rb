@@ -16,8 +16,8 @@ class Cell < ApplicationRecord
 	# Validations
 	validates :name, :ck_coordinate_x, :ck_coordinate_y, :region_id, presence: true
 	validates :slug, uniqueness: true
-	validates :ck_coordinate_x, inclusion: -32..58 
-	validates :ck_coordinate_y, inclusion: -44..32
+	# validates :ck_coordinate_x, inclusion: -32..58 
+	# validates :ck_coordinate_y, inclusion: -44..32
 	# validates_with CoordinateValidator, on: :update
 
 	# callbacks
@@ -57,6 +57,40 @@ class Cell < ApplicationRecord
 	# 		true
 	# 	end
 	# end
+
+	# def progress
+	# 	self.percent_complete.to_i
+	# end
+
+	def self.cell_progress
+		# @data = {percent_0: nil, percent_10: nil, percent_20: nil, percent_30: nil, percent_40: nil, percent_50: nil, percent_60: nil, percent_70: nil, percent_80: nil, percent_90: nil, percent_100: nil}
+		# # get all cells
+		# @cells = Cell.all
+		# # count how many cells have each % complete
+		# @data.each_with_index do |category, i|
+		# 	binding.pry
+		# 	percentage = category.delete("percent_")
+		# 	@cells.select{ |cell| cell.percent_complete == ("#{i}0")}
+		# end
+		# save that result to an array of hashes
+		# return an array of hashes for use by the chart
+		# {progress-0: 12, progress-10: 3, progress-20: 13 ...} etc.
+		# binding.pry
+		# data = [
+		# 	['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General', 'Western', 'Literature', { role: 'annotation' } ],
+		# 	{'2010': [10, 24, 20, 32, 18, 5] },
+		# 	['2020', 16, 22, 23, 30, 16, 9, ''],
+		# 	['2030', 28, 19, 29, 30, 12, 13, '']
+		# ]
+
+
+		# data = [
+		# 	{name: "Percentage", data: Cell.group(:percent_complete).count.to_a} 	
+		# ]
+
+		Cell.group(:percent_complete).count
+		# binding.pry
+	end
 
 	private
 
