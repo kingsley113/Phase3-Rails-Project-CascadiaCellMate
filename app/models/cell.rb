@@ -92,6 +92,8 @@ class Cell < ApplicationRecord
 		# binding.pry
 	end
 
+	
+
 	private
 
 	def set_slug
