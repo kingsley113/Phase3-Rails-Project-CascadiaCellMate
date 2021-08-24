@@ -1,7 +1,11 @@
 <div style="center-container">
 	<%=form_for region do |f|%>
-		<%=f.text_field :name, placeholder: "Name", class: "input-field" %>
+		<%=f.text_field :name, placeholder: "Name", class: "input-field", id: "region-field" %>
 
-		<%=f.submit button_text, class: "submit-button"%>
+	<div class="center-container">
+		<span class="border-box-skinny">
+			<%=f.submit button_text, class: "submit-button"%>
+		</span>
+	</div>
 	<%end%>
 </div>

@@ -15,7 +15,6 @@ class CellsController < ApplicationController
 
 
 	def index
-		# binding.pry
 		if params[:user_id]
 			@user = User.find_by(username: params[:user_id])
 			@cells = @user.cells
@@ -51,25 +50,17 @@ class CellsController < ApplicationController
 
 	def edit
 		set_cell
-		# binding.pry
-		# @cell = Cell.find_by_slug([params[:id]])
 	end
 
 	def update 
 		set_cell
-		# binding.pry
-		# if @cell.valid_coordinates?
-			@cell.update(cell_params)
-			if @cell.save!
-				redirect_to cell_path(@cell)
-			else
-				# TODO: Add alert message here
-				render 'edit'
-			end
-		# else
-		# 	# TODO: Alert for duplicate cells
-		# 	render'edit'
-		# end
+		@cell.update(cell_params)
+		if @cell.save!
+			redirect_to cell_path(@cell)
+		else
+			# TODO: Add alert message here
+			render 'edit'
+		end
 	end
 
 	def destroy
@@ -83,13 +74,10 @@ class CellsController < ApplicationController
 	end
 
 	def set_cell
-		# @cell = Cell.find_by(id: params[:id])
 		@cell = Cell.find_by_slug([params[:id]])
 	end
 
 	def all_cells
 		@cells = Cell.all
 	end
-
-	
 end

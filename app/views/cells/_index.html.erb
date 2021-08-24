@@ -2,11 +2,13 @@
 		<tr>
 			<th class="color-col"></th>
 			<th class="name-col">Cell Name</th>
+			<th>% Complete</th>
+			<th>Open Tasks</th>
 			<th>Priority</th>
 			<th class="coor-column">X</th>
 			<th class="coor-column">Y</th>
-			<th>% Complete</th>
-			<th>Open Tasks</th>
+			
+			
 			<th>Assigned User</th>
 			<th>Region</th>
 			<th class="edit-col"></th>
@@ -15,11 +17,11 @@
 			<tr>
 				<td style="background-color: <%=cell.color%>">  </td>
 				<td><%=link_to cell.name, cell_path(cell)%></td> 
+				<td class="center-cell"><%=cell.percent_complete%></td> 
+				<td class="center-cell"><%=cell.open_tasks %></td>
 				<td class="center-cell"><%=cell.priority%></td> 
 				<td class="center-cell"><%=cell.ck_coordinate_x%></td> 
 				<td class="center-cell"><%=cell.ck_coordinate_y%></td> 
-				<td class="center-cell"><%=cell.percent_complete%></td> 
-				<td class="center-cell"><%=cell.open_tasks %></td>
 				<td>
 					<% if cell.user%> 
 						<%=cell.user.display_name %> 
