@@ -1,0 +1,35 @@
+<div class="center-container" id="margin-top-10">
+	<div class="skew-border-box">
+		<span class="nav-text-italic inline title skew-correction"> Fallout</span>
+		<span class="nav-text-italic inline skew-correction">Cell Mate</span>
+	</div>
+</div>
+
+<div class="center-container">
+	<h1>Enter Access Code to Continue</h1>
+</div>
+
+<div class="center-container" id="margin-top-10">
+	<%= form_tag gateway_path, class: "center-container" do %>
+		<span class="inline" id="new-task-input">
+			<%= text_field_tag :'gateway[code]', "", class: "input-field", placeholder: "access code" %>
+		</span>
+				
+		<span class="inline border-box-skinny">
+			<%= submit_tag 'Submit', class: "submit-button "%>
+		</span>
+	<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

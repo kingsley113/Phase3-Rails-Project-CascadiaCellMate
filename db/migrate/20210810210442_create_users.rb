@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
 			t.string :accent_color
 			t.string :slug
 			t.text :recent_cells
+			t.text :uid
+			t.text :image
 
       t.timestamps
     end

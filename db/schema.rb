@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(version: 2021_08_10_211411) do
     t.string "accent_color"
     t.string "slug"
     t.text "recent_cells"
+    t.text "uid"
+    t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

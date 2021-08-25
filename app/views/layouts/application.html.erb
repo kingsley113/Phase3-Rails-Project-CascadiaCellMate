@@ -20,6 +20,7 @@
 			</script>
 		<% end %>
 
+		<% if session[:gateway_authenticated] %>
 		<header>
 			<div class="skew-border-box">
 				<span class="nav-text-italic inline title skew-correction"> Fallout</span>
@@ -55,9 +56,17 @@
 
 		</header>
 
+			
+
+
 		<div class="padded-body">
 		
 			<%= yield %>
 		</div>
+
+		<% else %>
+			<%= render partial: 'application/gateway'%>
+
+		<% end %>
   </body>
 </html>

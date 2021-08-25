@@ -25,12 +25,19 @@ Rails.application.routes.draw do
 	post '/logout' => 'sessions#destroy'
 	get '/signup' => 'users#new'
 
-	# post '/cells/:id/tasks/:task_id' => 'tasks#create'
+	# Task route
 	post '/tasks/complete' => 'tasks#complete'
 
+	# Map page routes for different color modes
 	get '/map' => 'cells#map_cell_color'
 	get '/map_user_colors' => 'cells#map_user_color'
 	get '/map_progress_colors' => 'cells#map_progress_color'
+	
+	# Session route for Discord Oauth 
+	get '/auth/discord/callback' => 'sessions#create'
+
+	# Gateway access code page
+	post '/gateway' => 'sessions#gateway'
 
 	# get '/regions/new' => 'regions#new'
 end

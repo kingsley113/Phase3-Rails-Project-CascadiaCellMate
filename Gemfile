@@ -26,6 +26,13 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'seer'
 gem "chartkick"
 
+gem "omniauth-rails_csrf_protection"
+gem "omniauth"
+gem "omniauth-discord"
+gem "dotenv-rails"
+
+gem "thin"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
