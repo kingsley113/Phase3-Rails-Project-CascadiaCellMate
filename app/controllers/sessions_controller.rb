@@ -7,26 +7,28 @@ class SessionsController < ApplicationController
 		# binding.pry
 
 		# Create session based on regular user login
-		if params[:username]
-			user = User.find_by(username: params[:user][:username])
-			user = user.try(:authenticate, params[:user][:password])
+		if params[:user]
+			@user = User.find_by(username: params[:user][:username])
+			@user = @user.try(:authenticate, params[:user][:password])
 			# binding.pry
-			return redirect_to login_path unless user
+			return redirect_to login_path unless @user
 
-			session[:user_id] = user.id
+			session[:user_id] = @user.id
 
-			@user = user
-			redirect_to user_path(@user)
-		end
-
+			# @user = user
+			# redirect_to user_path(@user)
+		
 		# Create session based on Discord Login
-		@user = User.find_or_create_by(uid: auth['uid']) do |u|
-			u.username = auth['info']['name']
-			u.image = auth['info']['image']
-			u.random_password
+		else
+			@user = User.find_or_create_by(uid: auth['uid']) do |u|
+				u.username = auth['info']['name']
+				u.image = auth['info']['image']
+				u.random_password
+			end
+			# binding.pry
+			session[:user_id] = @user.id
+
 		end
-		binding.pry
-		session[:user_id] = @user.id
 
 		redirect_to user_path(@user)
 	end
