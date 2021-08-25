@@ -38,6 +38,9 @@
 
 <div class="center-container">
 	<span class="border-box-skinny" id="margin-top-10">
-		<%= link_to('Log in with Discord!', '/auth/discord', method: :post, class: "submit-button") %>
+		<%= link_to('Create Account', signup_path, class: "submit-button") %>
 	</span>
 </div>
+
+<%= render partial: 'discord'%>
+

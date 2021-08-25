@@ -10,14 +10,14 @@ class User < ApplicationRecord
 	# Validations
 	validates :username, :password, presence: true
 	validates :username, :slug, uniqueness: true
-	validates :access_code, inclusion: {in: %w(doeshesmelllikegluten), message: 'is incorrect'}, on: :create
+	# validates :access_code, inclusion: {in: %w(doeshesmelllikegluten), message: 'is incorrect'}, on: :create
 	
 	# callbacks
 	before_create :set_default_display_name
 	after_validation :set_slug, only: [:create, :update]
 
 	# virtual attributes
-	attr_accessor :access_code
+	# attr_accessor :access_code
 	
 	# instance methods
 	def to_param
@@ -55,6 +55,14 @@ class User < ApplicationRecord
 
 	def get_recent_cells
 		Cell.find(self.recent_cells.split(","))
+	end
+
+	
+	def random_password
+		# binding.pry
+		chars = ('0'..'9').to_a + ('A'..'Z').to_a + ('a'..'z').to_a
+  	# chars.sort_by { rand }.join[0...16]
+		self.password = chars.sort_by { rand }.join[0...16]
 	end
 
 	private

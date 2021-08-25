@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
 		@user = User.find_or_create_by(uid: auth['uid']) do |u|
 			u.username = auth['info']['name']
 			u.image = auth['info']['image']
+			u.random_password
 		end
 		binding.pry
 		session[:user_id] = @user.id
@@ -37,7 +38,7 @@ class SessionsController < ApplicationController
 			flash.alert = "Incorrect Access Code"
 		end
 
-		redirect_to signup_path
+		redirect_to login_path
 
 	end
 
