@@ -11,12 +11,9 @@ class ApplicationController < ActionController::Base
 	end
 
 	def redirect_if_not_logged_in
-		# binding.pry
 		unless logged_in?
-			# binding.pry
 			redirect_to login_path, alert: "You must be logged in to view this page"
 		end
 	end
 
-	
 end

@@ -35,13 +35,13 @@ class UsersController < ApplicationController
 		if @user.save
 			redirect_to user_path(@user)
 		else
-			# TODO: add flash error message
 			render 'edit'
 		end
 	end
 
 	def destroy
 		# admin only
+		TODO:
 	end
 
 	private

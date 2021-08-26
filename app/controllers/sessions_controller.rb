@@ -29,6 +29,7 @@ class SessionsController < ApplicationController
 	end
 
 	def gateway
+		# Code for live version: "doeshesmelllikegluten"
 		if params[:gateway]['code'] == "cascadiaiscool"
 			session[:gateway_authenticated] = true
 		else
@@ -36,7 +37,6 @@ class SessionsController < ApplicationController
 		end
 
 		redirect_to login_path
-
 	end
 
 	def destroy

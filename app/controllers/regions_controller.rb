@@ -23,12 +23,10 @@ class RegionsController < ApplicationController
 	end
 
 	def edit
-		# admin only
 		set_region
 	end
 
 	def update 
-		# admin only
 		set_region
 		@region.update(region_params)
 
@@ -48,7 +46,6 @@ class RegionsController < ApplicationController
 	private 
 
 	def set_region
-		# @region = Region.find(params[:id])
 		@region = Region.find_by_slug(params[:id])
 	end
 

@@ -14,17 +14,9 @@ class Quest < ApplicationRecord
 		self.slug
 	end
 
-	# def cell_ids=(ids)
-	# 	ids.each do |id|
-	# 		cell = Cell.find(id)
-	# 		self.cells << cell
-	# 	end
-	# end
-
 	def self.all_by_title
 		@quests = Quest.all.sort_by{ |quest| quest.title}
 	end
-
 
 	private
 

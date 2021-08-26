@@ -1,9 +1,5 @@
 class TasksController < ApplicationController
 
-	# def index
-	# 	#maybe?
-	# end
-
 	def new
 		@task = Task.new(cell_id: params[:cell_id])
 	end

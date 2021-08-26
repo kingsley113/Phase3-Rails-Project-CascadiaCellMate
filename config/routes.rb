@@ -16,8 +16,6 @@ Rails.application.routes.draw do
 		resources :cells, only: [:show, :index, :new]
 	end
 
-	 
-
 	root 'welcome#home'
 
 	get '/login' => 'sessions#new'
@@ -39,5 +37,4 @@ Rails.application.routes.draw do
 	# Gateway access code page
 	post '/gateway' => 'sessions#gateway'
 
-	# get '/regions/new' => 'regions#new'
 end

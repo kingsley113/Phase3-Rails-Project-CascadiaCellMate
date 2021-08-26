@@ -12,8 +12,6 @@ class CellsController < ApplicationController
 		all_cells
 	end
 
-
-
 	def index
 		if params[:user_id]
 			@user = User.find_by(username: params[:user_id])
@@ -63,7 +61,6 @@ class CellsController < ApplicationController
 
 	def destroy
 	end
-
 
 	private
 

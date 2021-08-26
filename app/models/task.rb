@@ -8,7 +8,6 @@ class Task < ApplicationRecord
 	# Callbacks
 	before_create :set_complete_to_false
 
-
 	def set_complete_to_false
 		self.complete = false
 	end

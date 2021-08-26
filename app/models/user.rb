@@ -16,17 +16,10 @@ class User < ApplicationRecord
 	before_create :set_default_display_name
 	after_validation :set_slug, only: [:create, :update]
 
-	# virtual attributes
-	# attr_accessor :access_code
-	
 	# instance methods
 	def to_param
 		self.slug
 	end
-
-	# def self.access_code
-	# 	"doeshesmelllikegluten"
-	# end
 
 	def set_recent_cell(cell)
 		# get array of recent visits
@@ -48,10 +41,8 @@ class User < ApplicationRecord
 				self.recent_cells = visits.join(",")
 			end
 		else
-			# binding.pry
 			self.recent_cells = cell.id	
 		end
-		# binding.pry
 		self.save
 	end
 
@@ -59,7 +50,6 @@ class User < ApplicationRecord
 		Cell.find(self.recent_cells.split(","))
 	end
 
-	
 	def random_password
 		# binding.pry
 		chars = ('0'..'9').to_a + ('A'..'Z').to_a + ('a'..'z').to_a
