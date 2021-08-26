@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	has_secure_password
 
 	# Validations
-	validates :username, :password, presence: true
+	validates :username, :password, presence: true, on: [:create]
 	validates :username, :slug, uniqueness: true
 	# validates :access_code, inclusion: {in: %w(doeshesmelllikegluten), message: 'is incorrect'}, on: :create
 	
@@ -48,8 +48,10 @@ class User < ApplicationRecord
 				self.recent_cells = visits.join(",")
 			end
 		else
+			# binding.pry
 			self.recent_cells = cell.id	
 		end
+		# binding.pry
 		self.save
 	end
 

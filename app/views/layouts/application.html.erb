@@ -43,12 +43,19 @@
 				</ul>
 			</nav> 
 
-			<div >
+			<div class="center-container">
 				<% if current_user %>
-					<span class="fallout-font nav-text">
-						<%= link_to current_user.display_name, user_path(current_user) %>
-						</span><br>
-					<span> <%= link_to "Logout", logout_path, html_options = {method: :post}%></span>
+					<div>
+						<span class="fallout-font nav-text">
+							<%= link_to current_user.display_name, user_path(current_user) %></span><br>
+						<span> <%= link_to "Logout", logout_path, html_options = {method: :post}%></span>
+					</div>
+
+					<% if current_user.image %>
+						<div>
+							<%= image_tag(current_user.image, class: "avatar-image", id: "margin-left-10") %>
+						</div>
+					<% end %>
 				<% else %>
 					<%=link_to "Sign In", login_path %>
 				<% end %>
@@ -65,6 +72,16 @@
 		</div>
 
 		<% else %>
+			<div class="center-container" id="margin-top-10">
+				<% flash.each do |type, msg|%>
+					<% if type == "alert" %>
+						<span id="alert-message"><%= msg %></span>
+					<% else %>
+						<span id="notice-message"><%= msg %></span>
+					<% end %>
+				<% end %>
+			</div>
+
 			<%= render partial: 'application/gateway'%>
 
 		<% end %>
