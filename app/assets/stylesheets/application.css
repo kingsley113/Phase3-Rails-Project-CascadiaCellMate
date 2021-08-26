@@ -742,6 +742,13 @@ hr {
 	text-align: right;
 }
 
+#discord-logo {
+	width: 150px;
+}
+
+.extra-padding {
+	padding: 0px 15px;
+}
 /* User */
 
 .user-info-table {
