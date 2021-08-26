@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 		resources :cells, only: [:show, :index, :new]
 	end
 
+	resources :cells, only: [:show] do
+		resources :tasks, only: [:new]
+	end
+
 	root 'welcome#home'
 
 	get '/login' => 'sessions#new'
