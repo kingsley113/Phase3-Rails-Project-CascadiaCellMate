@@ -9,25 +9,19 @@ class Cell < ApplicationRecord
 	belongs_to :user, optional: true
 	belongs_to :region
 
-	# This is used to link an interior cell to an exterior cell Id, and also give exterior cells list of interiors
-	# belongs_to parent: :class_name => :cell, :foreign_key => "exterior_cell_id"
-	# has_many :child_cells, :class_name => :cell, :foreign_key => "exterior_cell_id"
-
 	# Validations
-	validates :name, :ck_coordinate_x, :ck_coordinate_y, :region_id, presence: true
+	validates :name, :region_id, presence: true
 	validates :slug, uniqueness: true
 	validates :ck_coordinate_x, inclusion: {in: -32..58, message: 'must be between -32 and 58.'} 
 	validates :ck_coordinate_y, inclusion: {in: -44..32, message: 'must be between -44 and 32.'}
 
-
-	# validates_with CoordinateValidator, on: :update
+	validates_with CoordinateValidator, on: [:create, :update], message: 'Put some address please'
 
 	# callbacks
 	before_create :set_adjusted_coordinates
-	# before_validation :verify_coordinates
 	after_validation :set_slug, only: [:create, :update]
 
-	attr_accessor :create_default_tasks
+	attr_accessor :create_default_tasks, :cell
 
 	# Custom Methods
 	def to_param
@@ -40,7 +34,6 @@ class Cell < ApplicationRecord
 
 	def create_default_tasks
 		default_tasks = ["Blocked-out", "Cluttered", "Landscape Textures", "Hooked up to interior", "Optimized", "Navmeshed"]
-		# have this variable set from admin page??
 
 		default_tasks.each do |task_name|
 			task = self.tasks.build(name: task_name)
@@ -48,53 +41,9 @@ class Cell < ApplicationRecord
 		end
 	end
 
-	# def valid_coordinates?
-	# 	# check if combo of xy coordinates does not already exist
-	# 	# find cells with x coordinates
-	# 	# binding.pry
-	# 	cells = Cell.where(coordinate_x: self.ck_coordinate_x).where(coordinate_y: self.ck_coordinate_y)
-	# 	if cells.count > 1
-	# 		false
-	# 	else
-	# 		true
-	# 	end
-	# end
-
-	# def progress
-	# 	self.percent_complete.to_i
-	# end
-
 	def self.cell_progress
-		# @data = {percent_0: nil, percent_10: nil, percent_20: nil, percent_30: nil, percent_40: nil, percent_50: nil, percent_60: nil, percent_70: nil, percent_80: nil, percent_90: nil, percent_100: nil}
-		# # get all cells
-		# @cells = Cell.all
-		# # count how many cells have each % complete
-		# @data.each_with_index do |category, i|
-		# 	binding.pry
-		# 	percentage = category.delete("percent_")
-		# 	@cells.select{ |cell| cell.percent_complete == ("#{i}0")}
-		# end
-		# save that result to an array of hashes
-		# return an array of hashes for use by the chart
-		# {progress-0: 12, progress-10: 3, progress-20: 13 ...} etc.
-		# binding.pry
-		# data = [
-		# 	['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General', 'Western', 'Literature', { role: 'annotation' } ],
-		# 	{'2010': [10, 24, 20, 32, 18, 5] },
-		# 	['2020', 16, 22, 23, 30, 16, 9, ''],
-		# 	['2030', 28, 19, 29, 30, 12, 13, '']
-		# ]
-
-
-		# data = [
-		# 	{name: "Percentage", data: Cell.group(:percent_complete).count.to_a} 	
-		# ]
-
 		Cell.group(:percent_complete).count
-		# binding.pry
 	end
-
-	
 
 	private
 
