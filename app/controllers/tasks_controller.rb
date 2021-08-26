@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
 
 	def new
-		@task = Task.new(cell_id: params[:cell_id])
+		@task = Task.new
+		@task.cell = Cell.find_by(slug: params[:cell_id])
 	end
 
 	def show

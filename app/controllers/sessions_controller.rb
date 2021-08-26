@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 		# Create session based on Discord Login
 		else
 			@user = User.find_or_create_by(uid: auth['uid']) do |u|
-				u.username = auth['uid']
+				u.username = auth['info']['name']
 				u.display_name = auth['info']['name']
 				u.image = auth['info']['image']
 				u.random_password

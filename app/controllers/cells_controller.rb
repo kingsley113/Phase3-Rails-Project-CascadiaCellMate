@@ -27,7 +27,17 @@ class CellsController < ApplicationController
 	end
 
 	def new
+		# binding.pry
 		@cell = Cell.new
+
+		if params[:user_id]
+			@cell.user = User.find_by(slug: params[:user_id])
+		end
+
+		if params[:region_id]
+			@cell.region = Region.find_by(slug: params[:region_id])
+		end
+
 	end
 
 	def show

@@ -15,7 +15,7 @@ east = Region.create(name: "Eastside")
 testcells = Region.create(name: "Test Cells")
 
 # Users
-cam = User.create(username: "kingsley113", password: "12345", display_name: "Cameron", accent_color: "#f94fdd")
+cam = User.create(username: "kingsley113test", password: "12345", display_name: "Cameron", accent_color: "#f94fdd")
 jimmy = User.create(username: "jimmyd413", password: "12345", display_name: "Jimmy Diresta", accent_color: "#1fbef5")
 bob = User.create(username: "bclagmeister12", password: "12345", accent_color: "#c04e10")
 david = User.create(username: "DPiccutio", password: "12345", display_name: "D Man 56", accent_color: "#7fe061")
