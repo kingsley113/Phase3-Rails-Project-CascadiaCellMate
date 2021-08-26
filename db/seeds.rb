@@ -105,6 +105,7 @@ Cell.create(
 Cell.create(
 	name: "Test - Center 0 0", ck_coordinate_x: 0, ck_coordinate_y: 0, region_id: testcells.id,color: "red")
 
+	# Testing the vertical axis alignment
 Cell.create(
 	name: "Test - Y Axis 0", ck_coordinate_x: 35, ck_coordinate_y: 32, region_id: testcells.id)
 Cell.create(
@@ -122,7 +123,7 @@ Cell.create(
 Cell.create(
 	name: "Test - Y Axis 7", ck_coordinate_x: 35, ck_coordinate_y: -37, region_id: testcells.id)
 
-	
+	# Testing the spacing of grid cells to background
 Cell.create(
 	name: "Test - Group 1", ck_coordinate_x: 5, ck_coordinate_y: 5, region_id: testcells.id)	
 Cell.create(
@@ -135,7 +136,9 @@ Cell.create(
 	name: "Test - Group 5", ck_coordinate_x: 5, ck_coordinate_y: 3, region_id: testcells.id)	
 Cell.create(
 	name: "Test - Group 6", ck_coordinate_x: 5, ck_coordinate_y: 9, region_id: testcells.id)	
-															
+											
+	# Actual Cells from CK
+
 
 # Tasks
 Cell.all.each do |cell| 
