@@ -51,9 +51,7 @@ class User < ApplicationRecord
 	end
 
 	def random_password
-		# binding.pry
 		chars = ('0'..'9').to_a + ('A'..'Z').to_a + ('a'..'z').to_a
-  	# chars.sort_by { rand }.join[0...16]
 		self.password = chars.sort_by { rand }.join[0...16]
 	end
 

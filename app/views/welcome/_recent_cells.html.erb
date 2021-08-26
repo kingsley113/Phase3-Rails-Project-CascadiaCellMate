@@ -4,7 +4,7 @@
 
 <div class="center-container">
 	<% if @recent_cells %>
-		<ul class="clean">
+		<ul class="clean wide">
 			<% @recent_cells.each do |cell|%>
 				<li class="tr-height"><h3><%=link_to cell.name, cell_path(cell)%></h3></li>
 			<%end%>

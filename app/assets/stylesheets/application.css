@@ -754,3 +754,9 @@ hr {
 	object-fit: cover;
 	border-radius: 50%;
 }
+
+/* other */
+
+.wide {
+	width: 80%;
+}
