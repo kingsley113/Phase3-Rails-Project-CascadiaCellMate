@@ -8,7 +8,6 @@
 			<%=render partial: "pie_chart", locals: {cells: @cells} %>
 		</div>
 
-
 		<%=link_to map_path do %>
 			<div class="border-box tile-button" id="map-container">	
 				<div class="super-header fallout-font center-container" >View the map!</div>
@@ -16,7 +15,6 @@
 			</div>				
 		<%end%>
 		
-
 		<div class="border-box" id="recent-cells-container">
 			<%=render partial: "recent_cells", locals: {cells: @recent_cells} %> 
 		</div>
@@ -33,13 +31,10 @@
 			</div>
 		<%end%>
 
-			
 		<%=link_to quests_path do %>
 			<div class="border-box tile-button" id="all-quests-container">	
 				<div class="super-header fallout-font center-container" >View All Quests</div>
 			</div>
 		<%end%>
-
-		
 	</div>
 </div>

@@ -1,0 +1,9 @@
+<div class="center-container" id="margin-top-10">
+	<% flash.each do |type, msg|%>
+		<% if type == "alert" %>
+			<span id="alert-message"><%= msg %></span>
+		<% else %>
+			<span id="notice-message"><%= msg %></span>
+		<% end %>
+	<% end %>
+</div>

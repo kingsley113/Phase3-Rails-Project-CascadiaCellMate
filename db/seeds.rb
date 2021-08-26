@@ -121,9 +121,8 @@ Cell.create(
 	name: "Test - Y Axis 6", ck_coordinate_x: 35, ck_coordinate_y: -27, region_id: testcells.id)
 Cell.create(
 	name: "Test - Y Axis 7", ck_coordinate_x: 35, ck_coordinate_y: -37, region_id: testcells.id)
-# Cell.create(
-# 	name: "Test - Y Axis 8", ck_coordinate_x: 35, ck_coordinate_y: -47, region_id: testcells.id)
 
+	
 Cell.create(
 	name: "Test - Group 1", ck_coordinate_x: 5, ck_coordinate_y: 5, region_id: testcells.id)	
 Cell.create(

@@ -1,11 +1,11 @@
 <div class="center-container">
 	<h3>Edit Your Comment:</h3>
 </div>
+
 <%= form_tag comment_path, method: "Patch", class: "center-container" do %>
 	<div class="comment-textarea">
 		<%= text_area_tag :'comment[content]', comment.content , class: "text-area-input", placeholder: "Enter new comment here" %>
 	</div>
-	
 	
 	<div class="center-container border-box-skinny">
 		<%= submit_tag 'Save', class: "submit-button "%>

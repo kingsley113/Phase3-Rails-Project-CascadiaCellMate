@@ -12,18 +12,17 @@
 	<h1>Login to see the magic</h1>
 </div>
 
-
 <div class="center-container">
 	<div class="center-container">
 		<%= form_for :user, url: login_path, method: :post do |f| %>
 			<div class="center-container border-box">
 				<table class="no-border " id="login-form">
-							<colgroup>
-								<col span="1" class="cell-col-1">
-								<col span="1">
-							</colgroup>
-							<tr><td>Name: </td><td><%= f.text_field :username %> </td></tr>
-							<tr><td>Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
+					<colgroup>
+						<col span="1" class="cell-col-1">
+						<col span="1">
+					</colgroup>
+					<tr><td>Name: </td><td><%= f.text_field :username %> </td></tr>
+					<tr><td>Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
 				</table>
 			</div>
 

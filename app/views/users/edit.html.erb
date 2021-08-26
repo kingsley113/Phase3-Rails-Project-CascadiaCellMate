@@ -9,13 +9,13 @@
 		<%= form_for @user do |f| %>
 			<div class="center-container border-box">
 				<table class="no-border " id="login-form">
-							<colgroup>
-								<col span="1" class="cell-col-1">
-								<col span="1">
-							</colgroup>
-							<tr><td>Display Name: </td> <td><%= f.text_field :display_name %> </td></tr>
-							<tr><td>Profile Color: </td> <td><%=f.color_field :accent_color, class: "input-field" %></td></tr>
-							<tr><td>New Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
+					<colgroup>
+						<col span="1" class="cell-col-1">
+						<col span="1">
+					</colgroup>
+					<tr><td>Display Name: </td> <td><%= f.text_field :display_name %> </td></tr>
+					<tr><td>Profile Color: </td> <td><%=f.color_field :accent_color, class: "input-field" %></td></tr>
+					<tr><td>New Password:</td> <td><%= f.password_field :password, id: 'password' %></td></tr>
 				</table>
 			</div>
 
