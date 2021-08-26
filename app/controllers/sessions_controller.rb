@@ -4,30 +4,25 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		# binding.pry
-
 		# Create session based on regular user login
 		if params[:user]
 			@user = User.find_by(username: params[:user][:username])
 			@user = @user.try(:authenticate, params[:user][:password])
-			# binding.pry
+
 			return redirect_to login_path unless @user
 
 			session[:user_id] = @user.id
 
-			# @user = user
-			# redirect_to user_path(@user)
-		
 		# Create session based on Discord Login
 		else
 			@user = User.find_or_create_by(uid: auth['uid']) do |u|
-				u.username = auth['info']['name']
+				u.username = auth['uid']
+				u.display_name = auth['info']['name']
 				u.image = auth['info']['image']
 				u.random_password
 			end
-			# binding.pry
-			session[:user_id] = @user.id
 
+			session[:user_id] = @user.id
 		end
 
 		redirect_to user_path(@user)
@@ -50,10 +45,9 @@ class SessionsController < ApplicationController
 		redirect_to login_path
 	end
 
-
+	private
 
 	def auth
 		request.env['omniauth.auth']
 	end
-
 end
