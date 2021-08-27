@@ -41,8 +41,10 @@ class QuestsController < ApplicationController
 	end
 
 	def destroy
-		# admin only?
-		# TODO:
+		# admin only
+		set_quest
+		@quest.delete
+		redirect_to quests_path
 	end
 
 	private

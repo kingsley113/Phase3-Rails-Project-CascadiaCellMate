@@ -41,7 +41,8 @@ class UsersController < ApplicationController
 
 	def destroy
 		# admin only
-		# TODO:
+		set_user
+		@user.delete
 	end
 
 	private
