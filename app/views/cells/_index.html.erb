@@ -1,4 +1,5 @@
-<table id="all-cells">
+<% unless cells.empty? %>
+	<table id="all-cells">
 		<tr>
 			<th class="color-col"></th>
 			<th class="name-col">Cell Name</th>
@@ -11,7 +12,7 @@
 			<th>Region</th>
 			<th class="edit-col"></th>
 		</tr>
-		
+
 		<% cells.each do |cell| %>
 			<tr>
 				<td style="background-color: <%=cell.color%>">  </td>
@@ -34,3 +35,9 @@
 			</tr>
 		<% end %>
 	</table>
+
+<% else %>
+	<div class="center-container">
+		No cells to display
+	</div>
+<% end %>

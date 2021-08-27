@@ -13,6 +13,7 @@ class CellsController < ApplicationController
 	end
 
 	def index
+		# binding.pry
 		if params[:user_id]
 			@user = User.find_by(slug: params[:user_id])
 			@cells = @user.cells
