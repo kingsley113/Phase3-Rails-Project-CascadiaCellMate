@@ -14,7 +14,7 @@ class CellsController < ApplicationController
 
 	def index
 		if params[:user_id]
-			@user = User.find_by(username: params[:user_id])
+			@user = User.find_by(slug: params[:user_id])
 			@cells = @user.cells
 		elsif params[:query]
 			@cells = Cell.search(params[:query])
