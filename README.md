@@ -1,5 +1,4 @@
-# README
-# Fallout Cell Mate - Phase 3 Rails Project
+# Fallout Cell Mate - Phase 3 Rails Project README
 
 ## Description
 Fallout Cell Mate is an app to track the progress of level design 'cells' during the development of the game map. (The game world is broken up into a grid and each grid is known as cell) Each cell has a page of info including general status information, progress, % complete, assigned user, etc. There is a task todo list for the cell that can be checked off or add new tasks. Game quests can also be linked to cell locations to help focus on which areas need to be prioritized to implement the quest. Finally there is a comment section where team members can add comments or notes for the cell.
