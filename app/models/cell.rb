@@ -45,6 +45,11 @@ class Cell < ApplicationRecord
 		Cell.group(:percent_complete).count
 	end
 
+	def self.no_user
+		self.where({user: nil})
+	end
+
+	# Private Methods
 	private
 
 	def set_slug

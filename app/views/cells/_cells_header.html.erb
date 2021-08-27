@@ -1,0 +1,11 @@
+<span class="skew-border-box" id="new-cell-button">
+	<h1 class="fallout-font skew-correction"><%=link_to "Create New Cell", new_cell_path %></h1>
+</span>
+
+<span class="skew-border-box ">
+<%= form_with url: "/cells", method: :get, class: "skew-correction" do |f| %>
+		<%= f.label :query, "Search Cells:" %>
+		<%= f.text_field :query%>
+		<%= f.submit "Search", class: "submit-button" %>
+	<% end %>
+</span>

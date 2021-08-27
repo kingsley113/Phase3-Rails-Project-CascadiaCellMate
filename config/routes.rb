@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 	# Regions
 	# Comments
 	# Task
+
+	# Class method route for "no-user"
+	get '/cells/no_user' => 'cells#no_user'
+
 	resources :cells, :users, :regions, :tasks, :quests, :comments
 
 	resources :users, only: [:show] do
@@ -40,5 +44,7 @@ Rails.application.routes.draw do
 
 	# Gateway access code page
 	post '/gateway' => 'sessions#gateway'
+
+	
 
 end

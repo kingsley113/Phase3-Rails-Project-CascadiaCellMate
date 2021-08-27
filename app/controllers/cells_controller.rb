@@ -12,8 +12,11 @@ class CellsController < ApplicationController
 		all_cells
 	end
 
+	def no_user
+		@cells = Cell.no_user
+	end
+
 	def index
-		# binding.pry
 		if params[:user_id]
 			@user = User.find_by(slug: params[:user_id])
 			@cells = @user.cells
@@ -28,7 +31,6 @@ class CellsController < ApplicationController
 	end
 
 	def new
-		# binding.pry
 		@cell = Cell.new
 
 		if params[:user_id]
@@ -47,13 +49,13 @@ class CellsController < ApplicationController
 	end
 
 	def create
-			@cell = Cell.new(cell_params)
-			if @cell.save
-				@cell.create_default_tasks
-				redirect_to cell_path(@cell)
-			else
-				render 'new'
-			end
+		@cell = Cell.new(cell_params)
+		if @cell.save
+			@cell.create_default_tasks
+			redirect_to cell_path(@cell)
+		else
+			render 'new'
+		end
 	end
 
 	def edit
@@ -71,6 +73,8 @@ class CellsController < ApplicationController
 	end
 
 	def destroy
+		set_cell
+		@cell.delete
 	end
 
 	private

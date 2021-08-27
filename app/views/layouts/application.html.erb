@@ -18,52 +18,50 @@
 		<% if logged_in? %>
 			<script>
 				var bodyStyles = document.body.style;
-				bodyStyles.setProperty('--main-accent-color', '<%=current_user.accent_color%>');
+				bodyStyles.setProperty('--main-accent-color', '<%= current_user.accent_color %>');
 			</script>
 		<% end %>
 
 		<% if session[:gateway_authenticated] %>
-		<header>
-			<div class="skew-border-box">
-				<span class="nav-text-italic inline title skew-correction"> Fallout</span>
-				<span class="nav-text-italic inline skew-correction">Cell Mate</span>
-			</div>
-			<nav class="nav-text-italic inline">
-				
-				<ul class="nav-links">
-					<li><%=link_to "Home", root_path %></li> 
-					<li><%=link_to "Cell Map", map_path %></li>
-					<li><%=link_to "Cell List", cells_path %></li> 
+			<header>
+				<div class="skew-border-box">
+					<span class="nav-text-italic inline title skew-correction"> Fallout</span>
+					<span class="nav-text-italic inline skew-correction">Cell Mate</span>
+				</div>
+
+				<nav class="nav-text-italic inline">
+					<ul class="nav-links">
+						<li><%=link_to "Home", root_path %></li> 
+						<li><%=link_to "Cell Map", map_path %></li>
+						<li><%=link_to "Cell List", cells_path %></li> 
+						<% if current_user %>
+							<li><%=link_to "My Cells", user_cells_path(current_user) %></li> 
+						<% else %>
+							<li><%=link_to "Sign In", login_path %> </li>
+						<% end %>
+						<li><%=link_to "Regions", regions_path %></li>
+						<li><%=link_to "Quests", quests_path %></li> 		
+					</ul>
+				</nav> 
+
+				<div class="center-container">
 					<% if current_user %>
-						<li><%=link_to "My Cells", user_cells_path(current_user) %></li> 
-					<% else %>
-						<li><%=link_to "Sign In", login_path %> </li>
-					<% end %>
-					<li><%=link_to "Regions", regions_path %></li>
-					<li><%=link_to "Quests", quests_path %></li> 
-					
-				</ul>
-			</nav> 
-
-			<div class="center-container">
-				<% if current_user %>
-					<div>
-						<span class="fallout-font nav-text">
-							<%= link_to current_user.display_name, user_path(current_user) %></span><br>
-						<span> <%= link_to "Logout", logout_path, html_options = {method: :post}%></span>
-					</div>
-
-					<% if current_user.image %>
 						<div>
-							<%= image_tag(current_user.image, class: "avatar-image", id: "margin-left-10") %>
+							<span class="fallout-font nav-text">
+								<%= link_to current_user.display_name, user_path(current_user) %></span><br>
+							<span> <%= link_to "Logout", logout_path, html_options = {method: :post}%></span>
 						</div>
-					<% end %>
-				<% else %>
-					<%=link_to "Sign In", login_path %>
-				<% end %>
-			</div>
 
-		</header>
+						<% if current_user.image %>
+							<div>
+								<%= image_tag(current_user.image, class: "avatar-image", id: "margin-left-10") %>
+							</div>
+						<% end %>
+					<% else %>
+						<%=link_to "Sign In", login_path %>
+					<% end %>
+				</div>
+			</header>
 
 		<div class="padded-body">
 			<%= yield %>
@@ -71,7 +69,6 @@
 
 		<% else %>
 			<%= render partial: 'application/flash'%>
-
 			<%= render partial: 'application/gateway'%>
 		<% end %>
   </body>

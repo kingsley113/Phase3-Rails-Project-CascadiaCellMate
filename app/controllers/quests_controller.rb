@@ -22,8 +22,6 @@ class QuestsController < ApplicationController
 		end
 	end
 
-
-
 	def edit
 		set_quest
 	end
