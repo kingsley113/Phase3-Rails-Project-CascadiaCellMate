@@ -15,7 +15,7 @@ class Cell < ApplicationRecord
 	validates :ck_coordinate_x, inclusion: {in: -32..58, message: 'must be between -32 and 58.'} 
 	validates :ck_coordinate_y, inclusion: {in: -44..32, message: 'must be between -44 and 32.'}
 
-	validates_with CoordinateValidator, on: [:create, :update], message: 'Put some address please'
+	validates_with CoordinateValidator, on: [:create, :update]
 
 	# callbacks
 	before_create :set_adjusted_coordinates

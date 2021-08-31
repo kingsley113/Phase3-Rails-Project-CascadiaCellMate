@@ -75,6 +75,8 @@ class CellsController < ApplicationController
 	def destroy
 		set_cell
 		@cell.delete
+
+		redirect_to cells_path
 	end
 
 	private
