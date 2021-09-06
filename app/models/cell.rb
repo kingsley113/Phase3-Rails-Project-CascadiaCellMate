@@ -5,6 +5,7 @@ class Cell < ApplicationRecord
 	has_many :comments
 	has_many :cell_quests
 	has_many :quests, through: :cell_quests
+	has_many :characters
 
 	belongs_to :user, optional: true
 	belongs_to :region
@@ -70,5 +71,6 @@ class Cell < ApplicationRecord
 
 	def self.all_by_name
 		@cells = Cell.all.sort_by{ |cell| cell.name}
+		# could use Cell.order
 	end
 end

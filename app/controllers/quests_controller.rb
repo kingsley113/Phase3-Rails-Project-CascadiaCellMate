@@ -29,10 +29,10 @@ class QuestsController < ApplicationController
 	def update
 		set_quest
 
-		@quest.update(quest_params)
+		# @quest.update(quest_params)
 
-		if @quest.save
-			redirect_to quest_path(@quest)
+		if @quest.update(quest_params)
+			redirect_to @quest
 		else
 			render 'edit'
 		end

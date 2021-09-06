@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_211411) do
+ActiveRecord::Schema.define(version: 2021_08_31_193709) do
 
   create_table "cell_quests", force: :cascade do |t|
     t.integer "cell_id"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2021_08_10_211411) do
     t.integer "exterior_cell_id"
     t.string "color"
     t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.integer "cell_id"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

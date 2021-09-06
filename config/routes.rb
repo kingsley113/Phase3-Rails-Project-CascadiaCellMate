@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
 	resources :cells, only: [:show] do
 		resources :tasks, only: [:new]
+		resources :characters, only: [:index]
 	end
 
 	root 'welcome#home'
