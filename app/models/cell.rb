@@ -5,6 +5,7 @@ class Cell < ApplicationRecord
 	has_many :comments
 	has_many :cell_quests
 	has_many :quests, through: :cell_quests
+	has_many :characters
 
 	belongs_to :user, optional: true
 	belongs_to :region
@@ -15,7 +16,7 @@ class Cell < ApplicationRecord
 	validates :ck_coordinate_x, inclusion: {in: -32..58, message: 'must be between -32 and 58.'} 
 	validates :ck_coordinate_y, inclusion: {in: -44..32, message: 'must be between -44 and 32.'}
 
-	validates_with CoordinateValidator, on: [:create, :update], message: 'Put some address please'
+	validates_with CoordinateValidator, on: [:create, :update]
 
 	# callbacks
 	before_create :set_adjusted_coordinates
@@ -70,5 +71,6 @@ class Cell < ApplicationRecord
 
 	def self.all_by_name
 		@cells = Cell.all.sort_by{ |cell| cell.name}
+		# could use Cell.order
 	end
 end
