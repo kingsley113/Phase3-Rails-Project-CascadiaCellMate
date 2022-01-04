@@ -292,6 +292,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   chartkick
   dotenv-rails
+  eventmachine (= 1.2.7)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   omniauth
@@ -315,5 +316,4 @@ DEPENDENCIES
 RUBY VERSION
    ruby 3.0.3p157
 
-BUNDLED WITH
-   2.2.32
+
