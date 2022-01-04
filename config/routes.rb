@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 		resources :tasks, only: [:new]
 	end
 
-	root 'welcome#home'
+	root 'welcome#index'
 
 	get '/login' => 'sessions#new'
 	post '/login' => 'sessions#create'
