@@ -3,7 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # ruby '2.6.1'
 # ruby '3.0.2'
-ruby '3.1.0'
+ruby '3.0.3'
+# ruby '3.1.0'
 
 # gem 'bundler', '2.1.4'
 
